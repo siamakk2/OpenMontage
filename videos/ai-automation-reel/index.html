@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:InterL;src:url(assets/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:InterL;src:url(assets/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:InterL;src:url(assets/inter-latin-800-normal.woff2) format("woff2");font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:InterL,sans-serif;color:#f6f3ff}
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 15% 6%,#2a1466 0%,rgba(42,20,102,0) 60%),radial-gradient(900px 900px at 90% 94%,#0b3a5c 0%,rgba(11,58,92,0) 60%),#05040c}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(160,120,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.07) 1px,transparent 1px);background-size:90px 90px}
+#glow{position:absolute;width:900px;height:900px;left:90px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(69,194,255,.2),rgba(69,194,255,0) 65%)}
+.clip{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 90px;text-align:center}
+.handle{position:absolute;top:84px;left:0;right:0;text-align:center;font-weight:600;font-size:28px;letter-spacing:3px;color:rgba(246,243,255,.55)}
+.kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-weight:600;font-size:26px;letter-spacing:8px;color:#8fd8ff}
+.block{display:block}
+.h1{font-weight:800;font-size:100px;line-height:1.12;letter-spacing:-2px;max-width:920px}
+.grad{background:linear-gradient(90deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 8px}
+.ex{position:absolute;top:22px;right:26px;font-weight:800;font-size:20px;letter-spacing:4px;color:#8f86b8;border:2px solid #4a4270;border-radius:10px;padding:5px 10px}
+/* 1 */
+.clock{font-weight:800;font-size:230px;letter-spacing:-8px;line-height:1;color:#f6f3ff}
+.clock span{font-size:70px;letter-spacing:0;margin-left:18px;color:#8f86b8}
+.note{position:relative;width:880px;text-align:left;background:rgba(23,19,44,.95);border:2px solid rgba(160,120,255,.3);border-radius:32px;padding:34px 38px;margin-top:70px}
+.nh{display:flex;align-items:center;gap:16px;font-size:30px;color:#c9c0ea}
+.nh b{font-weight:800;color:#f6f3ff}
+.nh i{font-style:normal;margin-left:auto;margin-right:150px;color:#8f86b8}
+.ndot{width:20px;height:20px;border-radius:50%;background:#45c2ff;display:block}
+.nt{font-size:42px;line-height:1.38;margin-top:18px}
+.unr{margin-top:46px;font-weight:800;font-size:34px;letter-spacing:6px;color:#ff7a8a;border:3px solid rgba(255,122,138,.7);border-radius:16px;padding:14px 28px}
+/* 2 */
+.chore{width:900px;background:rgba(29,25,56,.88);border:2px solid rgba(160,120,255,.25);border-radius:30px;padding:34px 36px;margin-top:30px}
+.cl{font-weight:800;font-size:44px;line-height:1.2;text-align:left}
+.pdf2xl{position:relative;display:flex;align-items:center;gap:28px;margin-top:28px}
+.pdf{width:150px;height:180px;border-radius:18px;background:rgba(255,138,122,.12);border:2px solid rgba(255,138,122,.5);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pdf svg{width:70px;height:70px}
+.pdf b{font-size:26px;color:#ff8a7a;margin-top:6px}
+.arr{font-size:60px;color:#8f86b8}
+.sheet{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cell{height:50px;border-radius:8px;background:rgba(143,216,255,.25)}
+.cur{position:absolute;right:6px;bottom:4px;width:5px;height:48px;background:#f6f3ff}
+.envs{display:flex;gap:18px;margin-top:28px}
+.env{flex:1;height:120px;border-radius:18px;background:rgba(201,192,234,.08);border:2px solid rgba(201,192,234,.25);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.env svg{width:54px;height:54px}
+.env b{font-size:26px;color:#c9c0ea;margin-top:4px}
+.again{margin-top:60px;font-weight:800;font-size:150px;letter-spacing:-3px;color:#ff7a8a;transform:rotate(-8deg)}
+/* 4 */
+.title{font-weight:800;font-size:84px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.step{position:relative;width:900px;display:flex;align-items:center;gap:30px;text-align:left;background:rgba(29,25,56,.85);border:2px solid rgba(160,120,255,.25);border-radius:28px;padding:28px 34px;margin-top:26px}
+.ic{flex:0 0 96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#45c2ff,#a06bff)}
+.ic svg{width:56px;height:56px}
+.stx{display:block;flex:1}
+.sk{display:block;font-weight:800;font-size:52px;line-height:1.1}
+.sd{display:block;font-size:32px;color:#c9c0ea;margin-top:8px}
+.ok{flex:0 0 64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:38px;color:#05040c;background:#5ef0a8}
+/* 5 */
+.vs{display:flex;gap:26px;margin-top:30px}
+.vc{width:437px;text-align:left;background:rgba(29,25,56,.85);border:2px solid rgba(160,120,255,.22);border-radius:28px;padding:34px 30px;min-height:430px}
+.vc.on{border-color:rgba(69,194,255,.7);box-shadow:0 0 60px rgba(69,194,255,.18)}
+.vk{display:block;font-weight:800;font-size:24px;letter-spacing:4px;color:#8f86b8}
+.vh{display:block;font-weight:800;font-size:56px;line-height:1.1;margin-top:18px}
+.vd{display:block;font-size:34px;line-height:1.38;color:#c9c0ea;margin-top:18px}
+.lim{margin-top:44px;font-weight:800;font-size:26px;letter-spacing:4px;color:#ffb454;border:2px solid rgba(255,180,84,.55);border-radius:999px;padding:14px 28px}
+/* 6 */
+.sil{display:block;width:420px;height:420px;clip-path:circle(43.6% at 50% 50%)}
+.how{margin-top:40px;width:900px}
+.hw{display:flex;align-items:center;gap:26px;text-align:left;font-weight:800;font-size:48px;line-height:1.2;background:rgba(29,25,56,.85);border:2px solid rgba(160,120,255,.25);border-radius:26px;padding:26px 30px;margin-top:22px}
+.hn{flex:0 0 72px;height:72px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#05040c;background:linear-gradient(135deg,#45c2ff,#a06bff)}
+.hw.hu{border-color:rgba(255,180,84,.6);color:#ffd59a}
+.hw.hu .hn{background:linear-gradient(135deg,#ffb454,#ff8a7a)}
+/* end */
+#logo{width:560px;height:auto;display:block}
+.endl{font-weight:800;font-size:76px;line-height:1.2;margin-top:64px;max-width:900px;letter-spacing:-1.5px}
+.cta{margin-top:46px;display:block;padding:30px 54px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-weight:800;font-size:44px}
+.url{margin-top:26px;font-weight:600;font-size:40px;color:#f6f3ff}
+#ccw{position:absolute;left:0;right:0;top:1590px;text-align:center}
+.cc{position:absolute;left:70px;right:70px;top:0;opacity:0;font-weight:800;font-size:40px;line-height:1.3;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.9)}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="36.5">
+  <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0.00" data-duration="4.80" data-track-index="1">
+    <div class="kicker">AI AUTOMATION · SIAMAK KALHOR</div>
+    <div id="clock" class="clock">11:04<span>PM</span></div>
+    <div id="note" class="note"><span class="ex">EXAMPLE</span>
+      <div class="nh"><span class="ndot"></span><b>New reply from a lead</b><i>now</i></div>
+      <div class="nt">"Hi! Do you have time this week? I'd like a quote."</div>
+    </div>
+    <div id="unr" class="unr">NO ONE ANSWERED</div>
+  </section>
+
+  <section id="s2" class="clip" data-start="4.80" data-duration="6.30" data-track-index="1">
+    <div id="ch1" class="chore">
+      <div class="cl">Re-typing PDFs into a spreadsheet</div>
+      <div class="pdf2xl"><span class="pdf"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="#ff8a7a" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke="#ff8a7a" stroke-width="2.2" stroke-linecap="round"/></svg><b>PDF</b></span><span class="arr">&rarr;</span><span class="sheet"><span class="cell" id="g0"></span><span class="cell" id="g1"></span><span class="cell" id="g2"></span><span class="cell" id="g3"></span><span class="cell" id="g4"></span><span class="cell" id="g5"></span><span class="cell" id="g6"></span><span class="cell" id="g7"></span><span class="cell" id="g8"></span><span class="cell" id="g9"></span><span class="cell" id="g10"></span><span class="cell" id="g11"></span></span><span id="cur" class="cur"></span></div>
+    </div>
+    <div id="ch2" class="chore">
+      <div class="cl">Chasing the same five follow-ups</div>
+      <div class="envs"><span class="env" id="e0"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#c9c0ea" stroke-width="2.4" stroke-linejoin="round"/></svg><b>#1</b></span><span class="env" id="e1"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#c9c0ea" stroke-width="2.4" stroke-linejoin="round"/></svg><b>#2</b></span><span class="env" id="e2"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#c9c0ea" stroke-width="2.4" stroke-linejoin="round"/></svg><b>#3</b></span><span class="env" id="e3"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#c9c0ea" stroke-width="2.4" stroke-linejoin="round"/></svg><b>#4</b></span><span class="env" id="e4"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#c9c0ea" stroke-width="2.4" stroke-linejoin="round"/></svg><b>#5</b></span></div>
+    </div>
+    <div id="again" class="again">AGAIN.</div>
+  </section>
+
+  <section id="s3" class="clip" data-start="11.10" data-duration="3.70" data-track-index="1">
+    <div id="s3a" class="h1 block">That's not work.</div>
+    <div id="s3b" class="h1 grad block" style="font-size:118px;margin-top:40px">That's a job for AI automation.</div>
+  </section>
+
+  <section id="s4" class="clip" data-start="14.80" data-duration="6.80" data-track-index="1">
+    <div id="s4t" class="title block">Reads. Decides. <span class="grad">Writes.</span></div>
+    <div class="step" id="st0"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="#05040c" stroke-width="2.4"/><path d="M4 7l8 6 8-6" fill="none" stroke="#05040c" stroke-width="2.4" stroke-linejoin="round"/></svg></span><div class="stx"><span class="sk">Sorts the email</span><span class="sd">Leads, invoices and spam, filed</span></div><span class="ok" id="ok0">&#10003;</span></div>
+    <div class="step" id="st1"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="#05040c" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke="#05040c" stroke-width="2.2" stroke-linecap="round"/></svg></span><div class="stx"><span class="sk">Pulls the data</span><span class="sd">PDF in, spreadsheet rows out</span></div><span class="ok" id="ok1">&#10003;</span></div>
+    <div class="step" id="st2"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z" fill="none" stroke="#05040c" stroke-width="2.4" stroke-linejoin="round"/></svg></span><div class="stx"><span class="sk">Drafts the reply</span><span class="sd">Waiting for your approval</span></div><span class="ok" id="ok2">&#10003;</span></div>
+    <div class="step" id="st3"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#05040c" stroke-width="2.4"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="#05040c" stroke-width="2.4"/></svg></span><div class="stx"><span class="sk">Qualifies the lead</span><span class="sd">Budget, timing and fit, scored</span></div><span class="ok" id="ok3">&#10003;</span></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="21.60" data-duration="5.00" data-track-index="1">
+    <div id="s5t" class="title block" style="font-size:72px">Rules break. <span class="grad">AI adapts.</span></div>
+    <div class="vs">
+      <div id="old" class="vc"><span class="vk">OLD AUTOMATION</span><span class="vh">Fixed rules</span><span class="vd">If this, then that. Anything unexpected, it stops.</span></div>
+      <div id="new" class="vc on"><span class="vk" style="color:#8fd8ff">AI AUTOMATION</span><span class="vh">Messy inputs</span><span class="vd">Scans, long emails, odd formats. Judgment calls within limits you set.</span></div>
+    </div>
+    <div id="lim" class="lim">YOUR LIMITS · YOUR RULES · YOUR APPROVAL</div>
+  </section>
+
+  <section id="s6" class="clip" data-start="26.60" data-duration="5.20" data-track-index="1">
+    <img id="sil" class="sil" src="assets/silhouette.svg" alt="Siamak Kalhor" />
+    <div class="how">
+      <div class="hw" id="h1"><span class="hn">1</span>I find the hours worth reclaiming</div>
+      <div class="hw" id="h2"><span class="hn">2</span>I build the automation</div>
+      <div class="hw hu" id="h3"><span class="hn">3</span>A human stays wherever judgment matters</div>
+    </div>
+  </section>
+
+  <section id="s7" class="clip" data-start="31.80" data-duration="4.70" data-track-index="1">
+    <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
+    <div id="s7a" class="endl block">Get your hours back.</div>
+    <div id="s7b" class="cta">Talk to Siamak</div>
+    <div id="s7c" class="url block">siamakconsulting.com/ai-automation</div>
+  </section>
+
+  <div id="ccw"></div>
+  
+  <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const C = [[0.0, 1.2, "It's 11 PM."], [1.4, 2.6, "A lead just replied."], [2.8, 4.6, "And nobody's awake to answer."], [5.1, 8.0, "Meanwhile, someone on your team is re-typing PDFs into a spreadsheet."], [8.2, 10.0, "Chasing the same five follow-ups."], [10.2, 10.9, "Again."], [11.4, 12.6, "That's not work."], [12.8, 14.6, "That's a job for AI automation."], [15.1, 16.9, "It reads, decides and writes."], [17.1, 18.1, "It sorts the email."], [18.3, 19.1, "Pulls the data."], [19.3, 20.2, "Drafts the reply."], [20.4, 21.4, "Qualifies the lead."], [21.9, 23.7, "Old automation follows fixed rules."], [23.9, 26.4, "AI handles the messy stuff, within limits you set."], [26.9, 31.6, "I find the hours worth reclaiming, build the automation, and keep a human wherever judgment matters."], [32.1, 33.3, "Get your hours back."], [33.5, 35.4, "Start at siamakconsulting.com"]];
+const S = [0, 4.8, 11.1, 14.8, 21.6, 26.6, 31.8, 36.5];
+const at = (i) => C[i][0];
+const out = (id, k) => tl.to(id, {opacity:0, duration:.3}, S[k] - .32);
+// 1. 11 PM
+tl.from("#clock",{scale:.85,opacity:0,duration:.6,ease:E},0.05)
+  .from("#note",{y:60,opacity:0,duration:.55,ease:E},at(1))
+  .from("#unr",{scale:.6,opacity:0,duration:.45,ease:"back.out(2)"},at(2)+.5)
+  .to("#clock",{color:"#8f86b8",duration:.6},at(2)+.5);
+out("#s1",1);
+// 2. chores
+tl.from("#ch1",{x:-120,opacity:0,duration:.5,ease:E},S[1]+.1);
+for (let i=0;i<12;i++) tl.from("#g"+i,{opacity:0,duration:.08},at(3)+.5+i*.18);
+tl.to("#cur",{opacity:0,duration:.12,repeat:9,yoyo:true},at(3)+.3)
+  .from("#ch2",{x:120,opacity:0,duration:.5,ease:E},at(4)-.1);
+for (let i=0;i<5;i++) tl.from("#e"+i,{y:-30,opacity:0,duration:.25,ease:E},at(4)+.15+i*.25);
+tl.from("#again",{scale:2.2,opacity:0,rotation:-14,duration:.35,ease:"power4.out"},at(5))
+  .to("#again",{rotation:-8,duration:.2},at(5)+.35);
+out("#s2",2);
+// 3. reframe
+tl.from("#s3a",{y:50,opacity:0,duration:.5,ease:E},at(6))
+  .to("#s3a",{opacity:.4,duration:.4},at(7))
+  .from("#s3b",{scale:.7,opacity:0,duration:.55,ease:"back.out(1.6)"},at(7));
+out("#s3",3);
+// 4. steps
+tl.from("#s4t",{y:40,opacity:0,duration:.5,ease:E},at(8));
+[0,1,2,3].forEach(i=>{
+  tl.from("#st"+i,{x:-120,opacity:0,duration:.4,ease:E},at(9+i)-.1)
+    .from("#ok"+i,{scale:0,opacity:0,duration:.3,ease:"back.out(2.4)"},at(9+i)+.45)
+    .to("#st"+i,{borderColor:"rgba(94,240,168,.6)",duration:.3},at(9+i)+.45);
+});
+out("#s4",4);
+// 5. old vs AI
+tl.from("#s5t",{y:40,opacity:0,duration:.5,ease:E},S[4]+.05)
+  .from("#old",{y:60,opacity:0,duration:.5,ease:E},at(13))
+  .from("#new",{y:60,opacity:0,duration:.5,ease:E},at(14))
+  .to("#old",{opacity:.45,duration:.4},at(14))
+  .from("#lim",{opacity:0,y:20,duration:.45},at(14)+(C[14][1]-C[14][0])*.55);
+out("#s5",5);
+// 6. Siamak
+const w = C[15][1]-C[15][0];
+tl.from("#sil",{y:60,opacity:0,duration:.6,ease:E},S[5]+.05)
+  .from("#h1",{x:-80,opacity:0,duration:.45,ease:E},at(15)+.1)
+  .from("#h2",{x:-80,opacity:0,duration:.45,ease:E},at(15)+w*.38)
+  .from("#h3",{x:-80,opacity:0,duration:.45,ease:E},at(15)+w*.62);
+out("#s6",6);
+// 7. end
+tl.from("#logo",{scale:.8,opacity:0,duration:.6,ease:"back.out(1.4)"},S[6]+.05)
+  .from("#s7a",{y:40,opacity:0,duration:.5,ease:E},at(16))
+  .from("#s7b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},at(17))
+  .from("#s7c",{opacity:0,duration:.5},at(17)+.4)
+  .to("#s7b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},at(17)+1);
+tl.to("#glow",{x:-60,y:-120,duration:36.5,ease:"none"},0);
+const W=document.getElementById("ccw");
+C.forEach((c,i)=>{const d=document.createElement("div");d.className="cc";d.textContent=c[2];W.appendChild(d);
+  tl.set(d,{opacity:1},c[0]).set(d,{opacity:0},Math.min(c[1]+.3,(C[i+1]||[36.5])[0]));});
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

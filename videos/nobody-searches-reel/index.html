@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-900-normal.woff2) format("woff2");font-weight:900}
+@font-face{font-family:InterL;src:url(assets/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:InterL;src:url(assets/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:InterL;src:url(assets/inter-latin-800-normal.woff2) format("woff2");font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:InterL,Vazir,sans-serif;color:#f6f3ff}
+/* shared background lives on a full-bleed child, not the root */
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 80% 8%,#2a1466 0%,rgba(42,20,102,0) 60%),radial-gradient(900px 900px at 10% 92%,#0b3a5c 0%,rgba(11,58,92,0) 60%),#05040c}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(160,120,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.07) 1px,transparent 1px);background-size:90px 90px}
+#glow{position:absolute;width:900px;height:900px;left:90px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(91,43,214,.35),rgba(91,43,214,0) 65%)}
+.clip{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 90px}
+.fa{font-family:Vazir,sans-serif;direction:rtl;text-align:center}
+.en{font-family:InterL,sans-serif;direction:ltr;text-align:center;color:#c9c0ea}
+.kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-family:InterL;font-weight:600;font-size:26px;letter-spacing:8px;color:#8fd8ff}
+.handle{position:absolute;top:84px;left:0;right:0;text-align:center;font-family:InterL;font-weight:600;font-size:28px;letter-spacing:3px;color:rgba(246,243,255,.55)}
+.h1{font-weight:900;font-size:118px;line-height:1.25}
+.h2{font-weight:900;font-size:150px;line-height:1.2;background:linear-gradient(90deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 10px}
+.cap{font-size:40px;font-weight:600;margin-top:22px;max-width:900px}
+.block{display:block}
+/* chat */
+.phone{width:860px;border-radius:44px;background:rgba(17,14,34,.92);border:2px solid rgba(160,120,255,.35);padding:46px 40px;box-shadow:0 40px 120px rgba(0,0,0,.55)}
+.bar{display:flex;align-items:center;gap:16px;margin-bottom:34px;font-family:InterL;font-weight:600;font-size:28px;color:#a99de0;direction:ltr}
+.dot{width:18px;height:18px;border-radius:50%;background:#45c2ff;display:block}
+.bubble{border-radius:30px;padding:26px 32px;font-size:44px;line-height:1.45;display:block}
+.q{background:#5b2bd6;color:#fff;margin-left:110px}
+.a{background:#1d1938;border:1px solid rgba(255,255,255,.08);margin-right:60px;margin-top:30px;direction:ltr;text-align:left}
+.a .lead{font-family:InterL;font-size:30px;color:#a99de0;margin-bottom:16px;display:block}
+.row{display:flex;align-items:center;gap:20px;margin:16px 0;direction:ltr}
+.num{font-family:InterL;font-weight:800;font-size:36px;color:#8fd8ff;width:40px}
+.name{display:block;height:34px;border-radius:17px;background:linear-gradient(90deg,rgba(201,192,234,.55),rgba(201,192,234,.15))}
+.qcap{font-size:34px;margin-top:28px}
+/* list */
+.title{font-weight:900;font-size:92px;line-height:1.3;margin-bottom:12px}
+.item{width:900px;display:flex;align-items:center;gap:30px;background:rgba(29,25,56,.85);border:1px solid rgba(160,120,255,.3);border-radius:28px;padding:30px 36px;margin-top:30px;direction:rtl}
+.ix{flex:0 0 86px;height:86px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-family:Vazir;font-weight:900;font-size:52px;color:#05040c;background:linear-gradient(135deg,#45c2ff,#a06bff)}
+.itxt{display:block;text-align:right}
+.itxt .fa{text-align:right;font-weight:700;font-size:52px;line-height:1.35;display:block}
+.itxt .en{text-align:right;font-size:30px;margin-top:6px;display:block}
+/* end */
+#logo{width:560px;height:auto;display:block}
+.endfa{font-weight:900;font-size:66px;line-height:1.45;margin-top:70px;max-width:900px}
+.cta{margin-top:46px;display:block;padding:30px 50px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-family:InterL;font-weight:800;font-size:42px;direction:ltr}
+.url{margin-top:26px;font-family:InterL;font-weight:600;font-size:38px;color:#f6f3ff;direction:ltr}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="30">
+  <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0" data-duration="4" data-track-index="1">
+    <div class="kicker">THE LONG VIEW · SIAMAK KALHOR</div>
+    <div id="s1a" class="fa h1 block">دیگه کسی گوگل نمی‌کنه.</div>
+    <div id="s1b" class="fa h2 block">می‌پرسن.</div>
+    <div id="s1c" class="en cap block">Nobody googles anymore. They ask.</div>
+  </section>
+
+  <section id="s2" class="clip" data-start="4" data-duration="7" data-track-index="1">
+    <div id="phone" class="phone">
+      <div class="bar"><span class="dot"></span>AI assistant</div>
+      <div id="q" class="bubble q fa">یه دندون‌پزشک خوب نزدیک من کیه؟</div>
+      <div id="ans" class="bubble a">
+        <span class="lead">Here are three good options:</span>
+        <div class="row" id="r1"><span class="num">1</span><span class="name" style="width:380px"></span></div>
+        <div class="row" id="r2"><span class="num">2</span><span class="name" style="width:440px"></span></div>
+        <div class="row" id="r3"><span class="num">3</span><span class="name" style="width:320px"></span></div>
+      </div>
+    </div>
+    <div id="s2c" class="en cap qcap block">"Who's a good dentist near me?" One answer. Three names.</div>
+  </section>
+
+  <section id="s3" class="clip" data-start="11" data-duration="3.5" data-track-index="1">
+    <div id="s3a" class="fa h2 block" style="font-size:104px;white-space:nowrap">اسم شما توش نیست.</div>
+    <div id="s3b" class="fa h1 block" style="font-size:76px;font-weight:700;margin-top:30px">اون مشتری هیچ‌وقت شما رو نمی‌بینه.</div>
+    <div id="s3c" class="en cap block">Your name isn't on it. That customer never sees you.</div>
+  </section>
+
+  <section id="s4" class="clip" data-start="14.5" data-duration="9.5" data-track-index="1">
+    <div id="s4t" class="fa title block">هوش مصنوعی کی رو اسم می‌بره؟</div>
+    <div id="s4tc" class="en cap block" style="margin-top:0">Who does AI name?</div>
+    <div class="item" id="i1"><span class="ix">۱</span><div class="itxt"><span class="fa">سایتی که به سؤال‌ها جواب بده</span><span class="en">A website that answers real questions</span></div></div>
+    <div class="item" id="i2"><span class="ix">۲</span><div class="itxt"><span class="fa">حرفی که بقیه درباره‌ی شما می‌زنن</span><span class="en">What others say about you</span></div></div>
+    <div class="item" id="i3"><span class="ix">۳</span><div class="itxt"><span class="fa">اطلاعات یکسان، همه‌جا</span><span class="en">The same facts, everywhere</span></div></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="24" data-duration="6" data-track-index="1">
+    <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
+    <div id="s5a" class="fa endfa block">ببینید هوش مصنوعی درباره‌ی کسب‌وکار شما چی می‌گه</div>
+    <div id="s5b" class="cta">Free AI check</div>
+    <div id="s5c" class="url block">siamakconsulting.com/audit</div>
+  </section>
+
+  <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+// beat 1
+tl.from("#s1a",{y:60,opacity:0,duration:.7,ease:E},0.2)
+  .from("#s1b",{scale:.6,opacity:0,duration:.6,ease:"back.out(1.6)"},1.2)
+  .from("#s1c",{y:30,opacity:0,duration:.5,ease:E},1.9)
+  .to("#s1",{opacity:0,duration:.35},3.65);
+// beat 2
+tl.from("#phone",{y:120,opacity:0,duration:.7,ease:E},4.05)
+  .from("#q",{x:80,opacity:0,duration:.5,ease:E},4.6)
+  .from("#ans",{y:40,opacity:0,duration:.5,ease:E},5.9)
+  .from("#r1",{x:-40,opacity:0,duration:.4,ease:E},6.5)
+  .from("#r2",{x:-40,opacity:0,duration:.4,ease:E},6.9)
+  .from("#r3",{x:-40,opacity:0,duration:.4,ease:E},7.3)
+  .from("#s2c",{y:30,opacity:0,duration:.5,ease:E},8.0)
+  .to("#s2",{opacity:0,duration:.35},10.65);
+// beat 3
+tl.from("#s3a",{scale:1.25,opacity:0,duration:.55,ease:"expo.out"},11.05)
+  .from("#s3b",{y:40,opacity:0,duration:.5,ease:E},11.8)
+  .from("#s3c",{y:30,opacity:0,duration:.5,ease:E},12.4)
+  .to("#s3",{opacity:0,duration:.35},14.15);
+// beat 4
+tl.from("#s4t",{y:50,opacity:0,duration:.6,ease:E},14.6)
+  .from("#s4tc",{opacity:0,duration:.5},15.1)
+  .from("#i1",{x:120,opacity:0,duration:.55,ease:E},16.0)
+  .from("#i2",{x:120,opacity:0,duration:.55,ease:E},18.2)
+  .from("#i3",{x:120,opacity:0,duration:.55,ease:E},20.4)
+  .to("#s4",{opacity:0,duration:.35},23.65);
+// beat 5
+tl.from("#logo",{scale:.8,opacity:0,duration:.8,ease:"back.out(1.4)"},24.1)
+  .from("#s5a",{y:40,opacity:0,duration:.6,ease:E},25.0)
+  .from("#s5b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},25.8)
+  .from("#s5c",{opacity:0,duration:.5},26.3)
+  .to("#s5b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},27.0);
+// ambient glow drift across the whole piece
+tl.to("#glow",{x:-60,y:-120,duration:30,ease:"none"},0);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

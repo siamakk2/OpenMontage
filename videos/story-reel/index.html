@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:InterL;src:url(assets/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:InterL;src:url(assets/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:InterL;src:url(assets/inter-latin-800-normal.woff2) format("woff2");font-weight:800}
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:Vazir;src:url(assets/vazirmatn-arabic-900-normal.woff2) format("woff2");font-weight:900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:InterL,Vazir,sans-serif;color:#f6f3ff}
+#root.fa .t{font-family:Vazir,InterL,sans-serif;direction:rtl}
+#root.fa .h1,#root.fa .h2{letter-spacing:0;line-height:1.45}
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 85% 6%,#2a1466 0%,rgba(42,20,102,0) 60%),radial-gradient(900px 900px at 10% 94%,#0b3a5c 0%,rgba(11,58,92,0) 60%),#05040c}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(160,120,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.07) 1px,transparent 1px);background-size:90px 90px}
+#glow{position:absolute;width:900px;height:900px;left:90px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(160,107,255,.2),rgba(160,107,255,0) 65%)}
+.clip{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;text-align:center}
+.handle{position:absolute;top:84px;left:0;right:0;text-align:center;font-weight:600;font-size:28px;letter-spacing:3px;color:rgba(246,243,255,.55)}
+.kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-weight:600;font-size:26px;letter-spacing:6px;color:#8fd8ff}
+.block{display:block}
+.h1{font-weight:800;font-size:92px;line-height:1.14;letter-spacing:-2px;max-width:920px}
+.h2{font-weight:800;font-size:66px;line-height:1.2;letter-spacing:-1px;max-width:920px}
+.dimt{color:#a59cc9}
+.grad{background:linear-gradient(90deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 6px}
+.ex{position:absolute;top:18px;right:22px;font-weight:800;font-size:18px;letter-spacing:4px;color:#7a6a2a;border:2px solid #b8a04a;border-radius:8px;padding:4px 9px}
+.sil{display:block;width:420px;height:420px;clip-path:circle(43.6% at 50% 50%)}
+/* 1 yellow pages */
+#s1a{margin-top:26px}
+.yp{position:relative;width:820px;margin-top:34px;background:#ffd54a;color:#1d1630;border-radius:14px;padding:26px 34px 22px;text-align:left;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:rotate(-1.5deg)}
+.ypt{font-weight:800;font-size:40px;letter-spacing:3px;margin-bottom:12px;color:#1d1630}
+#root.fa .ypt{letter-spacing:0;text-align:right}
+.ypr{display:flex;justify-content:space-between;font-size:34px;padding:10px 0;border-top:2px dashed rgba(29,22,48,.35);direction:ltr}
+.ypr b{font-weight:800}
+/* 2 eras */
+.stage{position:relative;width:900px;height:900px}
+.era{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.elab{font-weight:800;font-size:34px;letter-spacing:6px;color:#8fd8ff;margin-bottom:34px}
+#root.fa .elab{font-family:Vazir;letter-spacing:0;font-size:40px}
+.win{width:860px;border-radius:18px;overflow:hidden;background:#c0c0c0;border:4px solid #e8e8e8;text-align:left;direction:ltr}
+.bar{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#000080}
+.bar i{width:22px;height:22px;background:#c0c0c0;display:block}
+.bar span{margin-left:18px;font-family:monospace;font-size:28px;color:#fff}
+.wb{padding:40px 36px;background:#fff;color:#000;font-family:"Times New Roman",serif}
+.wt{font-size:58px;color:#0000ee;text-decoration:underline}
+.uc{margin-top:30px;font-family:monospace;font-weight:700;font-size:36px;padding:16px;background:repeating-linear-gradient(45deg,#ffd54a 0 26px,#111 26px 52px);color:#fff;text-shadow:0 0 6px #000;text-align:center}
+.dial{margin-top:26px;font-family:monospace;font-size:30px;color:#444}
+.sbox{width:860px;display:flex;align-items:center;gap:22px;background:#fff;border-radius:999px;padding:26px 36px;direction:ltr;text-align:left}
+.sbox svg{width:52px;height:52px}
+.sbox svg circle,.sbox svg path{stroke:#555}
+.sbox span{font-size:44px;color:#222}
+.res{width:860px;text-align:left;margin-top:34px;direction:ltr}
+.res b{display:block;width:62%;height:30px;border-radius:8px;background:#6c8cff}
+.res i{display:block;width:88%;height:20px;border-radius:6px;background:rgba(201,192,234,.35);margin-top:14px}
+.phone{width:400px;height:720px;border-radius:60px;border:10px solid #2c2650;background:#0d0b1c;padding:40px 20px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.map{position:relative;width:100%;height:100%;border-radius:30px;background:linear-gradient(135deg,#17304a,#1d1938);background-image:linear-gradient(rgba(143,216,255,.15) 2px,transparent 2px),linear-gradient(90deg,rgba(143,216,255,.15) 2px,transparent 2px);background-size:60px 60px}
+.pin{position:absolute;width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#a06bff}
+.pin.hot{background:#45c2ff;box-shadow:0 0 40px rgba(69,194,255,.9)}
+.post{width:640px;background:rgba(23,19,44,.95);border:2px solid rgba(160,120,255,.3);border-radius:30px;padding:26px;text-align:left}
+.ph{display:flex;align-items:center;gap:18px}
+.av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#ff7ac3,#a06bff);display:block}
+.ph b{display:block;width:220px;height:26px;border-radius:8px;background:rgba(201,192,234,.4)}
+.pimg{height:420px;border-radius:20px;margin-top:22px;background:linear-gradient(135deg,#2a1466,#0b3a5c 60%,#45c2ff)}
+.pact{display:flex;gap:28px;margin-top:22px}
+.pact svg{width:58px;height:58px}
+.strip{display:flex;gap:14px;justify-content:center;margin-top:10px;direction:ltr}
+.sd{width:172px;text-align:center;opacity:.35}
+.sd span{display:flex;align-items:center;justify-content:center;width:66px;height:66px;margin:0 auto;border-radius:50%;border:3px solid #6a5fa0;font-weight:800;font-size:32px;color:#c9c0ea}
+.sd i{display:block;font-style:normal;font-weight:600;font-size:24px;color:#c9c0ea;margin-top:10px;line-height:1.2}
+#root.fa .sd i{font-family:Vazir;font-size:26px}
+#root.fa .sd span{font-family:Vazir}
+.sd.lit{opacity:1}
+.sd.lit span{border-color:#45c2ff;background:rgba(69,194,255,.15);color:#fff}
+.sd.glow span{background:linear-gradient(135deg,#45c2ff,#a06bff);border-color:transparent;color:#05040c;box-shadow:0 0 40px rgba(160,107,255,.8)}
+.sd.glow i{color:#fff;font-weight:800}
+/* 3 crowd */
+.crowd{display:grid;grid-template-columns:repeat(8,1fr);gap:26px;width:760px;margin-bottom:70px}
+.dot{width:54px;height:54px;border-radius:50%;background:#6a5fa0;display:block;margin:0 auto}
+/* 4 fifth */
+.big5{font-weight:800;font-size:300px;line-height:.9;background:linear-gradient(135deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent}
+#root.fa .big5{font-family:Vazir;font-weight:900;line-height:1.1}
+.kick2{font-weight:800;font-size:34px;letter-spacing:8px;color:#8fd8ff;margin-top:6px}
+#root.fa .kick2{letter-spacing:0;font-size:44px}
+.chat{width:860px;margin-top:40px;text-align:left}
+.cq{margin-left:200px;background:#5b2bd6;border-radius:28px;padding:22px 30px;font-size:40px;font-weight:600}
+#root.fa .cq{text-align:right}
+.ca{margin-right:120px;margin-top:20px;background:#1d1938;border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:24px 30px}
+.cal{display:block;font-size:30px;color:#a99de0;margin-bottom:10px}
+#root.fa .cal{text-align:right}
+.nm{display:flex;align-items:center;gap:18px;margin-top:12px}
+.nm b{width:36px;font-size:32px;color:#8fd8ff}
+.nm i{display:block;height:30px;border-radius:15px;background:linear-gradient(90deg,rgba(201,192,234,.55),rgba(201,192,234,.15))}
+/* 5 pills */
+.pills{display:flex;gap:18px;justify-content:center;margin-top:50px}
+.p{font-weight:800;font-size:40px;padding:18px 34px;border-radius:999px;border:3px solid rgba(255,180,84,.7);color:#ffd59a}
+/* end */
+#logo{width:560px;height:auto;display:block}
+.endl{font-weight:800;font-size:70px;line-height:1.2;margin-top:64px;max-width:920px;letter-spacing:-1.5px}
+#root.fa .endl{letter-spacing:0;line-height:1.5}
+.cta{margin-top:46px;display:block;padding:30px 54px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-weight:800;font-size:44px}
+.url{margin-top:26px;font-weight:600;font-size:40px;color:#f6f3ff}
+#ccw{position:absolute;left:0;right:0;top:1600px;text-align:center}
+.cc{position:absolute;left:66px;right:66px;top:0;opacity:0;font-weight:800;font-size:40px;line-height:1.35;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.92);text-align:center}
+#root.fa .cc{font-weight:700;font-size:42px;line-height:1.5}
+#root.fa .yp .ex{right:auto;left:22px}
+
+</style>
+</head>
+<body>
+<div id="root" class="en" data-composition-id="main" data-width="1080" data-height="1920" data-duration="44">
+  <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0.00" data-duration="6.90" data-track-index="1">
+    <div class="kicker t">40 YEARS · 5 SHIFTS · SIAMAK KALHOR</div>
+    <img id="sil1" class="sil" src="assets/silhouette.svg" alt="" style="width:300px;height:300px" />
+    <div id="s1a" class="h2 t block">Before the internet,</div>
+    <div id="yp" class="yp"><span class="ex">EXAMPLE</span><div class="ypt t">YELLOW PAGES</div><div class="ypr"><b>A-1 Plumbing</b><span>555-0142</span></div><div class="ypr"><b>Acme Dental Care</b><span>555-0187</span></div><div class="ypr"><b>Best Auto Repair</b><span>555-0119</span></div><div class="ypr"><b>City Roofing Co.</b><span>555-0163</span></div></div>
+    <div id="s1b" class="h2 t block" style="color:#ffd54a;margin-top:30px">there was the Yellow Pages.</div>
+  </section>
+
+  <section id="s2" class="clip" data-start="6.90" data-duration="6.80" data-track-index="1">
+    <div class="stage"><div class="era" id="era0"><div class="elab">SHIFT 1 · Websites</div><div class="win"><div class="bar"><i></i><i></i><i></i><span>http://www.</span></div><div class="wb"><div class="wt">Welcome to our homepage!</div><div class="uc">UNDER CONSTRUCTION</div><div class="dial">Connecting at 56k&hellip;</div></div></div></div><div class="era" id="era1"><div class="elab">SHIFT 2 · Search</div><div class="sbox"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="#c9c0ea" stroke-width="2.4"/><path d="M15 15l5 5" stroke="#c9c0ea" stroke-width="2.4" stroke-linecap="round"/></svg><span>plumber near me</span></div><div class="res"><b></b><i></i></div><div class="res"><b></b><i></i></div><div class="res"><b></b><i></i></div></div><div class="era" id="era2"><div class="elab">SHIFT 3 · Mobile</div><div class="phone"><div class="map"><span class="pin" style="left:30%;top:34%"></span><span class="pin" style="left:62%;top:52%"></span><span class="pin hot" style="left:44%;top:68%"></span></div></div></div><div class="era" id="era3"><div class="elab">SHIFT 4 · Social</div><div class="post"><div class="ph"><span class="av"></span><b></b></div><div class="pimg"></div><div class="pact"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z" fill="#ff7ac3"/></svg><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z" fill="none" stroke="#c9c0ea" stroke-width="2.2"/></svg><svg viewBox="0 0 24 24"><path d="M5 12l14-7-4 14-3-6z" fill="none" stroke="#c9c0ea" stroke-width="2.2"/></svg></div></div></div></div>
+    <div class="strip"><div class="sd" id="sd0"><span>1</span><i>Websites</i></div><div class="sd" id="sd1"><span>2</span><i>Search</i></div><div class="sd" id="sd2"><span>3</span><i>Mobile</i></div><div class="sd" id="sd3"><span>4</span><i>Social</i></div><div class="sd" id="sd4"><span>5</span><i>AI</i></div></div>
+  </section>
+
+  <section id="s3" class="clip" data-start="13.70" data-duration="7.00" data-track-index="1">
+    <div class="crowd"><span class="dot" id="dt0"></span><span class="dot" id="dt1"></span><span class="dot" id="dt2"></span><span class="dot" id="dt3"></span><span class="dot" id="dt4"></span><span class="dot" id="dt5"></span><span class="dot" id="dt6"></span><span class="dot" id="dt7"></span><span class="dot" id="dt8"></span><span class="dot" id="dt9"></span><span class="dot" id="dt10"></span><span class="dot" id="dt11"></span><span class="dot" id="dt12"></span><span class="dot" id="dt13"></span><span class="dot" id="dt14"></span><span class="dot" id="dt15"></span><span class="dot" id="dt16"></span><span class="dot" id="dt17"></span><span class="dot" id="dt18"></span><span class="dot" id="dt19"></span><span class="dot" id="dt20"></span><span class="dot" id="dt21"></span><span class="dot" id="dt22"></span><span class="dot" id="dt23"></span><span class="dot" id="dt24"></span><span class="dot" id="dt25"></span><span class="dot" id="dt26"></span><span class="dot" id="dt27"></span><span class="dot" id="dt28"></span><span class="dot" id="dt29"></span><span class="dot" id="dt30"></span><span class="dot" id="dt31"></span><span class="dot" id="dt32"></span><span class="dot" id="dt33"></span><span class="dot" id="dt34"></span><span class="dot" id="dt35"></span><span class="dot" id="dt36"></span><span class="dot" id="dt37"></span><span class="dot" id="dt38"></span><span class="dot" id="dt39"></span></div>
+    <div id="s3a" class="h2 t block dimt">Most businesses waited.</div>
+    <div id="s3b" class="h1 t block" style="margin-top:30px">The early movers won <span class="grad">for a decade.</span></div>
+  </section>
+
+  <section id="s4" class="clip" data-start="20.70" data-duration="8.20" data-track-index="1">
+    <div id="big5" class="big5">5</div>
+    <div id="s4a" class="kick2 t">The fifth shift</div>
+    <div id="s4b" class="h2 t block" style="margin-top:18px">Customers don't search. <span class="grad">They ask AI.</span></div>
+    <div id="chat" class="chat"><div class="cq t">Who should I hire?</div><div class="ca"><span class="t cal">Here are three names:</span><div class="nm" id="n1"><b>1</b><i style="width:58%"></i></div><div class="nm" id="n2"><b>2</b><i style="width:70%"></i></div><div class="nm" id="n3"><b>3</b><i style="width:46%"></i></div></div></div>
+    <div class="strip" style="margin-top:40px"><div class="sd lit" id="sdx0"><span>1</span><i>Websites</i></div><div class="sd lit" id="sdx1"><span>2</span><i>Search</i></div><div class="sd lit" id="sdx2"><span>3</span><i>Mobile</i></div><div class="sd lit" id="sdx3"><span>4</span><i>Social</i></div><div class="sd lit glow" id="sdx4"><span>5</span><i>AI</i></div></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="28.90" data-duration="9.00" data-track-index="1">
+    <img id="sil" class="sil" src="assets/silhouette.svg" alt="Siamak Kalhor" />
+    <div id="s5a" class="h1 t block dimt" style="margin-top:40px">The tools change.</div>
+    <div id="s5b" class="h1 t block">The principle <span class="grad">doesn't.</span></div>
+    <div class="pills"><span class="p t" id="p1">Be clear</span><span class="p t" id="p2">Be trusted</span><span class="p t" id="p3">Be everywhere</span></div>
+  </section>
+
+  <section id="s6" class="clip" data-start="37.90" data-duration="6.10" data-track-index="1">
+    <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
+    <div id="s6a" class="endl t block">Strategy that outlives <span class="grad">the algorithm.</span></div>
+    <div id="s6b" class="cta t">Talk to Siamak</div>
+    <div id="s6c" class="url block">siamakconsulting.com</div>
+  </section>
+
+  <div id="ccw"></div>
+  
+  <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const C = [[0, 3.2, "I started in marketing before the internet existed."], [3.6, 6.6, "Back then, the Yellow Pages decided who got the call."], [7.2, 8.4, "Then came websites."], [8.8, 9.6, "Then Google."], [10.0, 11.6, "Then the phone in your pocket."], [12.0, 13.4, "Then social media."], [14.0, 16.2, "Every time, most businesses waited."], [16.6, 20.4, "And every time, the ones who moved early won for a decade."], [21.0, 23.0, "Now it's happening a fifth time."], [23.4, 26.4, "Customers don't search. They ask AI."], [26.8, 28.6, "And it answers with a few names."], [29.2, 31.0, "Forty years taught me one thing:"], [31.3, 33.6, "the tools change, the principle doesn't."], [34.0, 37.6, "Be clear, be trusted, be everywhere your customer looks."], [38.2, 40.4, "Strategy that outlives the algorithm."], [40.8, 43.0, "Start at siamakconsulting.com"]];
+const S = [0, 6.9, 13.7, 20.7, 28.9, 37.9, 44];
+const at = (i) => C[i][0];
+const len = (i) => C[i][1] - C[i][0];
+const out = (id, k) => tl.to(id, {opacity:0, duration:.3}, S[k] - .32);
+// 1. before the internet
+tl.from("#sil1",{scale:.8,opacity:0,duration:.6,ease:E},0.05)
+  .from("#s1a",{y:40,opacity:0,duration:.5,ease:E},0.3)
+  .from("#yp",{y:80,opacity:0,rotation:-3,duration:.6,ease:E},at(1))
+  .from(".ypr",{x:-40,opacity:0,duration:.3,stagger:.18,ease:E},at(1)+.4)
+  .from("#s1b",{y:30,opacity:0,duration:.45,ease:E},at(1)+len(1)*.5);
+out("#s1",1);
+// 2. four shifts
+for (let i=0;i<4;i++){
+  tl.from("#era"+i,{y:120,opacity:0,scale:.92,duration:.45,ease:E},at(2+i)-.05)
+    .to("#sd"+i,{className:"sd lit",duration:.01},at(2+i));
+  if (i<3) tl.to("#era"+i,{y:-60,opacity:0,scale:.9,duration:.35,ease:"power2.in"},at(3+i)-.15);
+}
+out("#s2",2);
+// 3. waited vs moved early
+tl.from(".dot",{scale:0,opacity:0,duration:.25,stagger:.02,ease:E},S[2]+.05)
+  .from("#s3a",{y:30,opacity:0,duration:.45,ease:E},at(6)+.1)
+  .to("#dt7",{backgroundColor:"#45c2ff",scale:1.9,boxShadow:"0 0 40px rgba(69,194,255,.9)",duration:.4},at(7))
+  .to(".dot:not(#dt7)",{opacity:.25,duration:.4},at(7))
+  .from("#s3b",{y:40,opacity:0,duration:.5,ease:E},at(7)+.2);
+out("#s3",3);
+// 4. the fifth shift
+tl.from("#big5",{scale:2.4,opacity:0,duration:.6,ease:"expo.out"},at(8))
+  .from("#s4a",{opacity:0,y:20,duration:.4},at(8)+.4)
+  .from("#s4b",{y:30,opacity:0,duration:.45,ease:E},at(9))
+  .from("#chat",{y:60,opacity:0,duration:.5,ease:E},at(9)+.6)
+  .from(".nm",{x:-40,opacity:0,duration:.3,stagger:.22,ease:E},at(10))
+  .from("#sdx4",{scale:.5,opacity:0,duration:.4,ease:"back.out(2)"},at(8)+.3);
+out("#s4",4);
+// 5. the principle
+tl.from("#sil",{y:50,opacity:0,duration:.6,ease:E},S[4]+.05)
+  .from("#s5a",{y:30,opacity:0,duration:.45,ease:E},at(12))
+  .from("#s5b",{y:30,opacity:0,duration:.45,ease:E},at(12)+len(12)*.55)
+  .from("#p1",{scale:.6,opacity:0,duration:.35,ease:"back.out(2)"},at(13)+.05)
+  .from("#p2",{scale:.6,opacity:0,duration:.35,ease:"back.out(2)"},at(13)+len(13)*.28)
+  .from("#p3",{scale:.6,opacity:0,duration:.35,ease:"back.out(2)"},at(13)+len(13)*.55);
+out("#s5",5);
+// 6. end
+tl.from("#logo",{scale:.8,opacity:0,duration:.6,ease:"back.out(1.4)"},S[5]+.05)
+  .from("#s6a",{y:40,opacity:0,duration:.5,ease:E},at(14)+.1)
+  .from("#s6b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},at(15))
+  .from("#s6c",{opacity:0,duration:.5},at(15)+.4)
+  .to("#s6b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},at(15)+1);
+tl.to("#glow",{x:-60,y:-120,duration:44,ease:"none"},0);
+const W=document.getElementById("ccw");
+C.forEach((c,i)=>{const d=document.createElement("div");d.className="cc t";d.textContent=c[2];W.appendChild(d);
+  tl.set(d,{opacity:1},c[0]).set(d,{opacity:0},Math.min(c[1]+.3,(C[i+1]||[44])[0]));});
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

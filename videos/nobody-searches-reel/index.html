@@ -50,21 +50,23 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
 #logo{width:560px;height:auto;display:block}
 .endfa{font-weight:900;font-size:66px;line-height:1.45;margin-top:70px;max-width:900px}
 .cta{margin-top:46px;display:block;padding:30px 50px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-family:InterL;font-weight:800;font-size:42px;direction:ltr}
+#ccw{position:absolute;left:0;right:0;top:1600px}
+.cc{position:absolute;left:60px;right:60px;top:0;opacity:0;font-family:Vazir,sans-serif;direction:rtl;text-align:center;font-weight:700;font-size:44px;line-height:1.45;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.95)}
 .url{margin-top:26px;font-family:InterL;font-weight:600;font-size:38px;color:#f6f3ff;direction:ltr}
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="30">
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="37.4">
   <div id="bg"></div><div id="grid"></div><div id="glow"></div>
 
-  <section id="s1" class="clip" data-start="0" data-duration="4" data-track-index="1">
+  <section id="s1" class="clip" data-start="0" data-duration="2.8" data-track-index="1">
     <div class="kicker">THE LONG VIEW · SIAMAK KALHOR</div>
     <div id="s1a" class="fa h1 block">دیگه کسی گوگل نمی‌کنه.</div>
     <div id="s1b" class="fa h2 block">می‌پرسن.</div>
     <div id="s1c" class="en cap block">Nobody googles anymore. They ask.</div>
   </section>
 
-  <section id="s2" class="clip" data-start="4" data-duration="7" data-track-index="1">
+  <section id="s2" class="clip" data-start="2.8" data-duration="8.15" data-track-index="1">
     <div id="phone" class="phone">
       <div class="bar"><span class="dot"></span>AI assistant</div>
       <div id="q" class="bubble q fa">یه دندون‌پزشک خوب نزدیک من کیه؟</div>
@@ -78,13 +80,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
     <div id="s2c" class="en cap qcap block">"Who's a good dentist near me?" One answer. Three names.</div>
   </section>
 
-  <section id="s3" class="clip" data-start="11" data-duration="3.5" data-track-index="1">
-    <div id="s3a" class="fa h2 block" style="font-size:104px;white-space:nowrap">اسم شما توش نیست.</div>
+  <section id="s3" class="clip" data-start="10.95" data-duration="4.35" data-track-index="1">
+    <div id="s3a" class="fa h2 block" style="font-size:94px;white-space:nowrap">اسم شما توش نیست.</div>
     <div id="s3b" class="fa h1 block" style="font-size:76px;font-weight:700;margin-top:30px">اون مشتری هیچ‌وقت شما رو نمی‌بینه.</div>
     <div id="s3c" class="en cap block">Your name isn't on it. That customer never sees you.</div>
   </section>
 
-  <section id="s4" class="clip" data-start="14.5" data-duration="9.5" data-track-index="1">
+  <section id="s4" class="clip" data-start="15.3" data-duration="14.25" data-track-index="1">
     <div id="s4t" class="fa title block">هوش مصنوعی کی رو اسم می‌بره؟</div>
     <div id="s4tc" class="en cap block" style="margin-top:0">Who does AI name?</div>
     <div class="item" id="i1"><span class="ix">۱</span><div class="itxt"><span class="fa">سایتی که به سؤال‌ها جواب بده</span><span class="en">A website that answers real questions</span></div></div>
@@ -92,53 +94,54 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
     <div class="item" id="i3"><span class="ix">۳</span><div class="itxt"><span class="fa">اطلاعات یکسان، همه‌جا</span><span class="en">The same facts, everywhere</span></div></div>
   </section>
 
-  <section id="s5" class="clip" data-start="24" data-duration="6" data-track-index="1">
+  <section id="s5" class="clip" data-start="29.55" data-duration="7.85" data-track-index="1">
     <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
     <div id="s5a" class="fa endfa block">ببینید هوش مصنوعی درباره‌ی کسب‌وکار شما چی می‌گه</div>
     <div id="s5b" class="cta">Free AI check</div>
     <div id="s5c" class="url block">siamakconsulting.com/audit</div>
   </section>
 
+  <div id="ccw"></div>
+  <audio id="vo" src="assets/vo.mp3" data-start="0" data-duration="36.28" data-track-index="2" data-volume="1"></audio>
   <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
 </div>
 <script>
 window.__timelines = window.__timelines || {};
 const tl = gsap.timeline({ paused: true });
 const E = "power3.out";
-// beat 1
-tl.from("#s1a",{y:60,opacity:0,duration:.7,ease:E},0.2)
-  .from("#s1b",{scale:.6,opacity:0,duration:.6,ease:"back.out(1.6)"},1.2)
-  .from("#s1c",{y:30,opacity:0,duration:.5,ease:E},1.9)
-  .to("#s1",{opacity:0,duration:.35},3.65);
-// beat 2
-tl.from("#phone",{y:120,opacity:0,duration:.7,ease:E},4.05)
-  .from("#q",{x:80,opacity:0,duration:.5,ease:E},4.6)
-  .from("#ans",{y:40,opacity:0,duration:.5,ease:E},5.9)
-  .from("#r1",{x:-40,opacity:0,duration:.4,ease:E},6.5)
-  .from("#r2",{x:-40,opacity:0,duration:.4,ease:E},6.9)
-  .from("#r3",{x:-40,opacity:0,duration:.4,ease:E},7.3)
-  .from("#s2c",{y:30,opacity:0,duration:.5,ease:E},8.0)
-  .to("#s2",{opacity:0,duration:.35},10.65);
-// beat 3
-tl.from("#s3a",{scale:1.25,opacity:0,duration:.55,ease:"expo.out"},11.05)
-  .from("#s3b",{y:40,opacity:0,duration:.5,ease:E},11.8)
-  .from("#s3c",{y:30,opacity:0,duration:.5,ease:E},12.4)
-  .to("#s3",{opacity:0,duration:.35},14.15);
-// beat 4
-tl.from("#s4t",{y:50,opacity:0,duration:.6,ease:E},14.6)
-  .from("#s4tc",{opacity:0,duration:.5},15.1)
-  .from("#i1",{x:120,opacity:0,duration:.55,ease:E},16.0)
-  .from("#i2",{x:120,opacity:0,duration:.55,ease:E},18.2)
-  .from("#i3",{x:120,opacity:0,duration:.55,ease:E},20.4)
-  .to("#s4",{opacity:0,duration:.35},23.65);
-// beat 5
-tl.from("#logo",{scale:.8,opacity:0,duration:.8,ease:"back.out(1.4)"},24.1)
-  .from("#s5a",{y:40,opacity:0,duration:.6,ease:E},25.0)
-  .from("#s5b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},25.8)
-  .from("#s5c",{opacity:0,duration:.5},26.3)
-  .to("#s5b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},27.0);
-// ambient glow drift across the whole piece
-tl.to("#glow",{x:-60,y:-120,duration:30,ease:"none"},0);
+// timed to the Persian voiceover (Sia), pauses measured with silencedetect
+tl.from("#s1a",{y:60,opacity:0,duration:.55,ease:E},0.05)
+  .from("#s1b",{scale:.6,opacity:0,duration:.5,ease:"back.out(1.6)"},2.0)
+  .from("#s1c",{y:30,opacity:0,duration:.4,ease:E},2.2)
+  .to("#s1",{opacity:0,duration:.3},2.5);
+tl.from("#phone",{y:120,opacity:0,duration:.6,ease:E},2.85)
+  .from("#q",{x:80,opacity:0,duration:.5,ease:E},4.3)
+  .from("#ans",{y:40,opacity:0,duration:.5,ease:E},8.0)
+  .from("#r1",{x:-40,opacity:0,duration:.3,ease:E},9.75)
+  .from("#r2",{x:-40,opacity:0,duration:.3,ease:E},9.98)
+  .from("#r3",{x:-40,opacity:0,duration:.3,ease:E},10.2)
+  .from("#s2c",{y:30,opacity:0,duration:.45,ease:E},8.4)
+  .to("#s2",{opacity:0,duration:.3},10.65);
+tl.from("#s3a",{scale:1.25,opacity:0,duration:.5,ease:"expo.out"},11.05)
+  .from("#s3b",{y:40,opacity:0,duration:.5,ease:E},12.7)
+  .from("#s3c",{y:30,opacity:0,duration:.5,ease:E},13.2)
+  .to("#s3",{opacity:0,duration:.3},15.0);
+tl.from("#s4t",{y:50,opacity:0,duration:.55,ease:E},15.45)
+  .from("#s4tc",{opacity:0,duration:.5},16.2)
+  .from("#i1",{x:120,opacity:0,duration:.5,ease:E},18.25)
+  .from("#i2",{x:120,opacity:0,duration:.5,ease:E},22.75)
+  .from("#i3",{x:120,opacity:0,duration:.5,ease:E},26.05)
+  .to("#s4",{opacity:0,duration:.3},29.25);
+tl.from("#logo",{scale:.8,opacity:0,duration:.7,ease:"back.out(1.4)"},29.65)
+  .from("#s5a",{y:40,opacity:0,duration:.5,ease:E},29.9)
+  .from("#s5b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},33.7)
+  .from("#s5c",{opacity:0,duration:.5},34.1)
+  .to("#s5b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},34.7);
+tl.to("#glow",{x:-60,y:-120,duration:37.4,ease:"none"},0);
+const CC=[[0,1.64,"دیگه کسی گوگل نمی‌کنه."],[2.01,2.6,"می‌پرسن."],[3.04,7.57,"مشتری از هوش مصنوعی می‌پرسه: یه دندون‌پزشک خوب نزدیک من کیه؟"],[8.01,10.53,"و فقط یه جواب می‌گیره، با سه تا اسم."],[11.05,14.95,"اگه اسم شما توش نباشه، اون مشتری هیچ‌وقت شما رو نمی‌بینه."],[15.51,17.79,"خب، هوش مصنوعی کی رو اسم می‌بره؟"],[18.24,22.34,"یک: کسی که سایتش به سؤال‌های واقعی مشتری جواب بده."],[22.75,25.63,"دو: کسی که بقیه درباره‌ش حرف می‌زنن."],[26.05,29.26,"سه: کسی که اطلاعاتش همه‌جا یکسانه."],[29.85,33.29,"می‌خواید بدونید هوش مصنوعی درباره‌ی کسب‌وکار شما چی می‌گه؟"],[33.69,36.28,"بررسی رایگان در siamakconsulting.com"]];
+const W=document.getElementById("ccw");
+CC.forEach((c,i)=>{const d=document.createElement("div");d.className="cc";d.textContent=c[2];W.appendChild(d);
+  tl.set(d,{opacity:1},c[0]).set(d,{opacity:0},Math.min(c[1]+0.3,(CC[i+1]||[37.4])[0]));});
 window.__timelines["main"] = tl;
 </script>
 </body>

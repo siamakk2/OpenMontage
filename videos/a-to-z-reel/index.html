@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:InterL;src:url(assets/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:InterL;src:url(assets/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:InterL;src:url(assets/inter-latin-800-normal.woff2) format("woff2");font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:InterL,sans-serif;color:#f6f3ff}
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 15% 6%,#2a1466 0%,rgba(42,20,102,0) 60%),radial-gradient(900px 900px at 90% 94%,#0b3a5c 0%,rgba(11,58,92,0) 60%),#05040c}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(160,120,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.07) 1px,transparent 1px);background-size:90px 90px}
+#glow{position:absolute;width:900px;height:900px;left:90px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(69,194,255,.2),rgba(69,194,255,0) 65%)}
+.clip{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 90px;text-align:center}
+.handle{position:absolute;top:84px;left:0;right:0;text-align:center;font-weight:600;font-size:28px;letter-spacing:3px;color:rgba(246,243,255,.55)}
+.kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-weight:600;font-size:26px;letter-spacing:8px;color:#8fd8ff}
+.block{display:block}
+.h1{font-weight:800;font-size:100px;line-height:1.12;letter-spacing:-2px;max-width:920px}
+.grad{background:linear-gradient(90deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 8px}
+.ex{position:absolute;top:22px;right:26px;font-weight:800;font-size:20px;letter-spacing:4px;color:#8f86b8;border:2px solid #4a4270;border-radius:10px;padding:5px 10px}
+/* end */
+#logo{width:560px;height:auto;display:block}
+.endl{font-weight:800;font-size:76px;line-height:1.2;margin-top:64px;max-width:900px;letter-spacing:-1.5px}
+.cta{margin-top:46px;display:block;padding:30px 54px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-weight:800;font-size:44px}
+.url{margin-top:26px;font-weight:600;font-size:40px;color:#f6f3ff}
+#ccw{position:absolute;left:0;right:0;top:1590px;text-align:center}
+.cc{position:absolute;left:70px;right:70px;top:0;opacity:0;font-weight:800;font-size:40px;line-height:1.3;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.9)}
+
+/* 1 */
+.big40{font-weight:800;font-size:200px;letter-spacing:-6px;white-space:nowrap;line-height:1;color:#f6f3ff}
+.sub40{font-weight:600;font-size:46px;color:#c9c0ea;margin-top:20px;max-width:880px;line-height:1.3}
+.now{margin-top:80px;font-weight:800;font-size:40px;letter-spacing:10px;color:#5ef0a8}
+.az{display:flex;align-items:center;gap:40px;margin-top:20px}
+.az b{font-weight:800;font-size:260px;line-height:1;letter-spacing:-6px}
+.az i{font-style:normal;font-size:120px;color:#8f86b8}
+/* 2 */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;width:920px;margin-top:20px}
+.tile{position:relative;height:250px;border-radius:28px;background:rgba(29,25,56,.85);border:2px solid rgba(160,120,255,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;opacity:.28}
+.tile .tn{font-weight:800;font-size:40px;line-height:1.15}
+.tile .td{font-size:24px;color:#c9c0ea;margin-top:10px;line-height:1.3}
+.tile .tk{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:#5ef0a8;color:#05040c;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center}
+/* 3 */
+.how{font-weight:800;font-size:180px;letter-spacing:-4px}
+.hub{position:relative;width:940px;height:940px;margin-top:10px}
+.core{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;background:radial-gradient(circle,rgba(160,107,255,.35),rgba(69,194,255,.08) 70%);border:3px solid rgba(160,120,255,.6);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.core img{width:190px;height:190px;clip-path:circle(43.6% at 50% 50%)}
+.core b{font-weight:800;font-size:28px;letter-spacing:4px;color:#ffb454;margin-top:6px}
+.ag{position:absolute;width:250px;padding:20px 16px;border-radius:24px;background:rgba(23,19,44,.95);border:2px solid rgba(69,194,255,.55);text-align:center}
+.ag .an{display:block;font-weight:800;font-size:34px}
+.ag .as{display:block;font-size:22px;color:#8fd8ff;margin-top:6px;letter-spacing:2px}
+.ring{position:absolute;left:50%;top:50%;width:700px;height:700px;margin:-350px 0 0 -350px;border-radius:50%;border:2px dashed rgba(143,216,255,.3)}
+.b247{position:absolute;right:30px;top:0;font-weight:800;font-size:56px;color:#05040c;background:#5ef0a8;border-radius:22px;padding:10px 22px}
+/* 4 */
+.store{display:flex;align-items:center;gap:30px}
+.store svg{width:150px;height:150px}
+.cnt{font-weight:800;font-size:200px;letter-spacing:-6px;line-height:1}
+.cntl{font-weight:600;font-size:40px;color:#c9c0ea;margin-top:6px}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:14px;width:760px;margin-top:50px}
+.dot{width:100%;aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#45c2ff,#a06bff)}
+.army{margin-top:56px;font-weight:800;font-size:58px;line-height:1.2}
+/* 5 */
+.h2{font-weight:800;font-size:96px;line-height:1.12;letter-spacing:-2px;max-width:940px}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="33.0">
+  <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0.00" data-duration="4.88" data-track-index="1">
+    <div class="kicker">FULL-SERVICE AI AGENCY · SIAMAK KALHOR</div>
+    <div id="b40" class="big40">40 years</div>
+    <div id="sub40" class="sub40">of telling businesses what to do.</div>
+    <div id="now" class="now">NOW · DONE FOR YOU</div>
+    <div id="az" class="az"><b class="grad">A</b><i>&rarr;</i><b class="grad">Z</b></div>
+  </section>
+
+  <section id="s2" class="clip" data-start="4.88" data-duration="8.80" data-track-index="1">
+    <div class="kicker">EVERYTHING, HANDLED</div>
+    <div class="tgrid">
+      <div class="tile" id="t0"><span class="tk" id="k0">&#10003;</span><span class="tn">Strategy</span><span class="td">The plan and the budget</span></div>
+      <div class="tile" id="t1"><span class="tk" id="k1">&#10003;</span><span class="tn">Brand</span><span class="td">Why customers pick you</span></div>
+      <div class="tile" id="t2"><span class="tk" id="k2">&#10003;</span><span class="tn">Website</span><span class="td">Built to convert</span></div>
+      <div class="tile" id="t3"><span class="tk" id="k3">&#10003;</span><span class="tn">Google &amp; AI</span><span class="td">Found and recommended</span></div>
+      <div class="tile" id="t4"><span class="tk" id="k4">&#10003;</span><span class="tn">Content</span><span class="td">Posts, pages, video</span></div>
+      <div class="tile" id="t5"><span class="tk" id="k5">&#10003;</span><span class="tn">Ads</span><span class="td">Google and Meta</span></div>
+      <div class="tile" id="t6"><span class="tk" id="k6">&#10003;</span><span class="tn">Email</span><span class="td">Nurture and news</span></div>
+      <div class="tile" id="t7"><span class="tk" id="k7">&#10003;</span><span class="tn">Every lead</span><span class="td">Answered 24/7</span></div>
+      <div class="tile" id="t8"><span class="tk" id="k8">&#10003;</span><span class="tn">Operations</span><span class="td">Automated</span></div>
+    </div>
+  </section>
+
+  <section id="s3" class="clip" data-start="13.68" data-duration="6.08" data-track-index="1">
+    <div id="how" class="how">How?</div>
+    <div id="hub" class="hub">
+      <div class="ring" id="ring"></div>
+      <div class="core" id="core"><img src="assets/silhouette.svg" alt="" /><b id="dir">STRATEGY</b></div>
+      <div class="ag" id="a0" style="left:345px;top:65px"><span class="an">Content</span><span class="as">WRITING</span></div>
+      <div class="ag" id="a1" style="left:648px;top:240px"><span class="an">Ads</span><span class="as">TESTING</span></div>
+      <div class="ag" id="a2" style="left:648px;top:590px"><span class="an">Leads</span><span class="as">ANSWERING</span></div>
+      <div class="ag" id="a3" style="left:345px;top:765px"><span class="an">Reviews</span><span class="as">REPLYING</span></div>
+      <div class="ag" id="a4" style="left:41px;top:590px"><span class="an">Reports</span><span class="as">MEASURING</span></div>
+      <div class="ag" id="a5" style="left:41px;top:240px"><span class="an">Ops</span><span class="as">AUTOMATING</span></div>
+      <div class="b247" id="b247">24/7</div>
+    </div>
+  </section>
+
+  <section id="s4" class="clip" data-start="19.76" data-duration="4.84" data-track-index="1">
+    <div class="store"><svg viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5" fill="none" stroke="#8fd8ff" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 9v11h16V9" fill="none" stroke="#8fd8ff" stroke-width="1.8"/><path d="M10 20v-6h4v6" fill="none" stroke="#8fd8ff" stroke-width="1.8"/></svg><div><div id="cnt" class="cnt">1</div><div class="cntl" id="cntl">location</div></div></div>
+    <div class="dots"><span class="dot" id="d0"></span><span class="dot" id="d1"></span><span class="dot" id="d2"></span><span class="dot" id="d3"></span><span class="dot" id="d4"></span><span class="dot" id="d5"></span><span class="dot" id="d6"></span><span class="dot" id="d7"></span><span class="dot" id="d8"></span><span class="dot" id="d9"></span><span class="dot" id="d10"></span><span class="dot" id="d11"></span><span class="dot" id="d12"></span><span class="dot" id="d13"></span><span class="dot" id="d14"></span><span class="dot" id="d15"></span><span class="dot" id="d16"></span><span class="dot" id="d17"></span><span class="dot" id="d18"></span><span class="dot" id="d19"></span><span class="dot" id="d20"></span><span class="dot" id="d21"></span><span class="dot" id="d22"></span><span class="dot" id="d23"></span><span class="dot" id="d24"></span><span class="dot" id="d25"></span><span class="dot" id="d26"></span><span class="dot" id="d27"></span><span class="dot" id="d28"></span><span class="dot" id="d29"></span><span class="dot" id="d30"></span><span class="dot" id="d31"></span><span class="dot" id="d32"></span><span class="dot" id="d33"></span><span class="dot" id="d34"></span><span class="dot" id="d35"></span><span class="dot" id="d36"></span><span class="dot" id="d37"></span><span class="dot" id="d38"></span><span class="dot" id="d39"></span><span class="dot" id="d40"></span><span class="dot" id="d41"></span><span class="dot" id="d42"></span><span class="dot" id="d43"></span><span class="dot" id="d44"></span><span class="dot" id="d45"></span><span class="dot" id="d46"></span><span class="dot" id="d47"></span><span class="dot" id="d48"></span><span class="dot" id="d49"></span><span class="dot" id="d50"></span><span class="dot" id="d51"></span><span class="dot" id="d52"></span><span class="dot" id="d53"></span><span class="dot" id="d54"></span><span class="dot" id="d55"></span><span class="dot" id="d56"></span><span class="dot" id="d57"></span><span class="dot" id="d58"></span><span class="dot" id="d59"></span><span class="dot" id="d60"></span><span class="dot" id="d61"></span><span class="dot" id="d62"></span><span class="dot" id="d63"></span><span class="dot" id="d64"></span><span class="dot" id="d65"></span><span class="dot" id="d66"></span><span class="dot" id="d67"></span><span class="dot" id="d68"></span><span class="dot" id="d69"></span><span class="dot" id="d70"></span><span class="dot" id="d71"></span><span class="dot" id="d72"></span><span class="dot" id="d73"></span><span class="dot" id="d74"></span><span class="dot" id="d75"></span><span class="dot" id="d76"></span><span class="dot" id="d77"></span><span class="dot" id="d78"></span><span class="dot" id="d79"></span><span class="dot" id="d80"></span><span class="dot" id="d81"></span><span class="dot" id="d82"></span><span class="dot" id="d83"></span><span class="dot" id="d84"></span><span class="dot" id="d85"></span><span class="dot" id="d86"></span><span class="dot" id="d87"></span><span class="dot" id="d88"></span><span class="dot" id="d89"></span><span class="dot" id="d90"></span><span class="dot" id="d91"></span><span class="dot" id="d92"></span><span class="dot" id="d93"></span><span class="dot" id="d94"></span><span class="dot" id="d95"></span><span class="dot" id="d96"></span><span class="dot" id="d97"></span><span class="dot" id="d98"></span><span class="dot" id="d99"></span></div>
+    <div id="army" class="army">Scales <span class="grad">without hiring an army.</span></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="24.60" data-duration="3.80" data-track-index="1">
+    <div id="s5a" class="h2 block">Not just a consultant anymore.</div>
+    <div id="s5b" class="h2 grad block" style="margin-top:50px">Your whole business, handled.</div>
+  </section>
+
+  <section id="s6" class="clip" data-start="28.40" data-duration="4.60" data-track-index="1">
+    <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
+    <div id="s6a" class="endl block">Strategy to operations. <span class="grad">A to Z.</span></div>
+    <div id="s6b" class="cta">Talk to Siamak</div>
+    <div id="s6c" class="url block">siamakconsulting.com</div>
+  </section>
+
+  <div id="ccw"></div>
+  <audio id="vo" src="assets/vo.mp3" data-start="0" data-duration="31.07" data-track-index="2" data-volume="1"></audio>
+  <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const C = [[0.14, 2.6, "For 40 years, I told businesses what to do."], [2.76, 4.02, "Now I can do it for them."], [4.06, 4.86, "From A to Z."], [5.18, 7.08, "Strategy. Brand. Website."], [7.34, 8.52, "Google and AI search."], [8.68, 9.96, "Content, ads and email."], [10.64, 12.32, "Every lead answered, day and night."], [12.52, 13.82, "Operations, automated."], [13.98, 14.6, "How?"], [15.0, 17.76, "A team of AI agents does the volume, around the clock,"], [18.28, 19.44, "and I direct every move."], [20.06, 22.2, "One store or 100 locations,"], [22.74, 24.5, "it scales without hiring an army."], [24.9, 26.44, "I'm not just a consultant anymore."], [26.94, 28.16, "Your whole business, handled."], [28.7, 30.78, "Start at siamakconsulting.com"]];
+const S = [0, 4.88, 13.68, 19.76, 24.6, 28.4, 33.0];
+const TT = [5.18, 6.04, 6.56, 7.34, 8.68, 9.22, 9.66, 10.64, 12.52];
+const at = (i) => C[i][0];
+const out = (id, k) => tl.to(id, {opacity:0, duration:.3}, S[k] - .32);
+// 1. forty years -> A to Z
+tl.from("#b40",{scale:.8,opacity:0,duration:.6,ease:E},0.05)
+  .from("#sub40",{y:30,opacity:0,duration:.5,ease:E},0.9)
+  .to(["#b40","#sub40"],{opacity:.35,duration:.4},at(1))
+  .from("#now",{y:30,opacity:0,duration:.45,ease:E},at(1))
+  .from("#az",{scale:.6,opacity:0,duration:.55,ease:"back.out(1.8)"},at(2)-.1);
+out("#s1",1);
+// 2. tiles
+TT.forEach((t,i)=>{ tl.to("#t"+i,{opacity:1,borderColor:"rgba(94,240,168,.65)",duration:.25},t-.05)
+  .from("#k"+i,{scale:0,duration:.3,ease:"back.out(2.4)"},t+.05); });
+out("#s2",2);
+// 3. agents + strategist
+tl.from("#how",{scale:1.4,opacity:0,duration:.4,ease:E},S[2]+.05)
+  .to("#how",{opacity:.25,scale:.7,y:-40,duration:.4},at(9)-.2)
+  .from("#ring",{scale:.6,opacity:0,duration:.6,ease:E},at(9)-.2)
+  .from("#core",{scale:.6,opacity:0,duration:.5,ease:"back.out(1.6)"},at(9));
+for (let i=0;i<6;i++) tl.from("#a"+i,{scale:0,opacity:0,duration:.35,ease:"back.out(2)"},at(9)+.25+i*.3);
+tl.to("#ring",{rotation:360,duration:8,ease:"none"},at(9))
+  .from("#b247",{scale:0,opacity:0,duration:.35,ease:"back.out(2.4)"},C[9][0]+2.0)
+  .to("#core",{borderColor:"rgba(255,180,84,.9)",boxShadow:"0 0 80px rgba(255,180,84,.45)",duration:.4},at(10))
+  .from("#dir",{opacity:0,y:10,duration:.35},at(10));
+out("#s3",3);
+// 4. one to a hundred
+const cnt={v:1};
+tl.to(cnt,{v:100,duration:1.3,ease:"power2.in",onUpdate:()=>{document.getElementById("cnt").textContent=Math.round(cnt.v);
+   document.getElementById("cntl").textContent=Math.round(cnt.v)>1?"locations":"location";}},C[11][0]+.9);
+for (let i=0;i<100;i++) tl.from("#d"+i,{opacity:0,scale:.3,duration:.12},(i===0?S[3]+.1:C[11][0]+.9+i*.013));
+tl.from("#army",{y:40,opacity:0,duration:.5,ease:E},at(12));
+out("#s4",4);
+// 5. reframe
+tl.from("#s5a",{y:50,opacity:0,duration:.5,ease:E},at(13))
+  .to("#s5a",{opacity:.4,duration:.4},at(14))
+  .from("#s5b",{scale:.75,opacity:0,duration:.55,ease:"back.out(1.6)"},at(14));
+out("#s5",5);
+// 6. end
+tl.from("#logo",{scale:.8,opacity:0,duration:.6,ease:"back.out(1.4)"},S[5]+.05)
+  .from("#s6a",{y:40,opacity:0,duration:.5,ease:E},at(15))
+  .from("#s6b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},at(15)+.6)
+  .from("#s6c",{opacity:0,duration:.5},at(15)+1)
+  .to("#s6b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},at(15)+1.4);
+tl.to("#glow",{x:-60,y:-120,duration:33.0,ease:"none"},0);
+const W=document.getElementById("ccw");
+C.forEach((c,i)=>{const d=document.createElement("div");d.className="cc";d.textContent=c[2];W.appendChild(d);
+  tl.set(d,{opacity:1},c[0]).set(d,{opacity:0},Math.min(c[1]+.3,(C[i+1]||[33.0])[0]));});
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

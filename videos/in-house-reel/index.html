@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:InterL;src:url(assets/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:InterL;src:url(assets/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:InterL;src:url(assets/inter-latin-800-normal.woff2) format("woff2");font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05040c}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:InterL,sans-serif;color:#f6f3ff}
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 15% 6%,#2a1466 0%,rgba(42,20,102,0) 60%),radial-gradient(900px 900px at 90% 94%,#0b3a5c 0%,rgba(11,58,92,0) 60%),#05040c}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(160,120,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.07) 1px,transparent 1px);background-size:90px 90px}
+#glow{position:absolute;width:900px;height:900px;left:90px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(69,194,255,.2),rgba(69,194,255,0) 65%)}
+.clip{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 90px;text-align:center}
+.handle{position:absolute;top:84px;left:0;right:0;text-align:center;font-weight:600;font-size:28px;letter-spacing:3px;color:rgba(246,243,255,.55)}
+.kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-weight:600;font-size:26px;letter-spacing:8px;color:#8fd8ff}
+.block{display:block}
+.h1{font-weight:800;font-size:100px;line-height:1.12;letter-spacing:-2px;max-width:920px}
+.grad{background:linear-gradient(90deg,#45c2ff,#a06bff 55%,#ff7ac3);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 8px}
+.ex{position:absolute;top:22px;right:26px;font-weight:800;font-size:20px;letter-spacing:4px;color:#8f86b8;border:2px solid #4a4270;border-radius:10px;padding:5px 10px}
+/* end */
+#logo{width:560px;height:auto;display:block}
+.endl{font-weight:800;font-size:76px;line-height:1.2;margin-top:64px;max-width:900px;letter-spacing:-1.5px}
+.cta{margin-top:46px;display:block;padding:30px 54px;border-radius:999px;background:linear-gradient(90deg,#45c2ff,#a06bff);color:#05040c;font-weight:800;font-size:44px}
+.url{margin-top:26px;font-weight:600;font-size:40px;color:#f6f3ff}
+#ccw{position:absolute;left:0;right:0;top:1590px;text-align:center}
+.cc{position:absolute;left:70px;right:70px;top:0;opacity:0;font-weight:800;font-size:40px;line-height:1.3;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.9)}
+
+
+.h1{font-weight:800;font-size:100px;line-height:1.12;letter-spacing:-2px;max-width:940px}
+.h2{font-weight:800;font-size:90px;line-height:1.12;letter-spacing:-2px;max-width:940px}
+/* 1 chain */
+.chain{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:30px}
+.lk{width:620px;padding:26px 30px;border-radius:26px;background:rgba(29,25,56,.9);border:2px solid rgba(160,120,255,.28);font-weight:800;font-size:44px;display:flex;align-items:center;justify-content:space-between}
+.lk small{font-weight:600;font-size:24px;color:#8f86b8;letter-spacing:3px}
+.lk.you{border-color:rgba(69,194,255,.7)}
+.lk.far{opacity:.75;border-style:dashed}
+.ln{width:4px;height:46px;background:linear-gradient(#a06bff,rgba(160,107,255,.2))}
+.qm{position:absolute;font-weight:800;font-size:64px;color:#ff7a8a}
+.xx{font-weight:800;font-size:260px;line-height:1;color:#ff7a8a;text-align:center}
+.wedont{font-weight:800;font-size:150px;letter-spacing:-4px;margin-top:30px}
+/* 2 house */
+.house{position:relative;width:900px;margin-top:40px}
+.roof{width:0;height:0;margin:0 auto;border-left:450px solid transparent;border-right:450px solid transparent;border-bottom:200px solid rgba(160,107,255,.35)}
+.body{border:3px solid rgba(160,120,255,.6);border-top:none;border-radius:0 0 30px 30px;background:rgba(23,19,44,.92);padding:34px 30px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.craft{border-radius:20px;background:rgba(69,194,255,.1);border:2px solid rgba(69,194,255,.45);padding:24px 10px;font-weight:800;font-size:36px}
+.hl{font-weight:800;font-size:32px;letter-spacing:8px;color:#5ef0a8;position:absolute;left:0;right:0;top:118px;text-align:center}
+.chk{display:flex;gap:16px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.pill{font-weight:800;font-size:30px;padding:16px 26px;border-radius:999px;border:2px solid rgba(255,180,84,.6);color:#ffd59a}
+/* 3 no */
+.nos{width:900px}
+.no{display:flex;align-items:center;gap:28px;font-weight:800;font-size:64px;text-align:left;margin-top:30px}
+.no b{flex:0 0 90px;height:90px;border-radius:24px;background:rgba(255,122,138,.15);border:2px solid rgba(255,122,138,.7);color:#ff7a8a;display:flex;align-items:center;justify-content:center;font-size:54px}
+.direct{display:flex;align-items:center;gap:30px;margin-top:80px}
+.who{width:250px;padding:24px;border-radius:26px;background:rgba(29,25,56,.9);border:2px solid rgba(69,194,255,.6);font-weight:800;font-size:36px}
+.who img{width:120px;height:120px;clip-path:circle(43.6% at 50% 50%);display:block;margin:0 auto 10px}
+.wire{width:260px;height:6px;border-radius:3px;background:linear-gradient(90deg,#45c2ff,#a06bff,#5ef0a8)}
+.made{font-weight:800;font-size:86px;line-height:1.15;letter-spacing:-2px;max-width:940px}
+.rec{display:inline-flex;align-items:center;gap:14px;margin-bottom:40px;font-weight:800;font-size:30px;letter-spacing:6px;color:#ff7a8a}
+.rec i{width:26px;height:26px;border-radius:50%;background:#ff4d6a;display:block}
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="33.4">
+  <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0.00" data-duration="6.12" data-track-index="1">
+    <div class="kicker">HOW MOST AGENCIES WORK</div>
+    <div class="chain">
+      <div class="lk you" id="c0"><span>You</span><small>CLIENT</small></div>
+      <div class="ln" id="l1"></div>
+      <div class="lk " id="c1"><span>The agency</span><small>SELLS IT</small></div>
+      <div class="ln" id="l2"></div>
+      <div class="lk far" id="c2"><span>Freelancer</span><small>DOES IT?</small></div>
+      <div class="ln" id="l3"></div>
+      <div class="lk far" id="c3"><span>Subcontractor</span><small>DOES IT?</small></div>
+      <div class="ln" id="l4"></div>
+      <div class="lk far" id="c4"><span>Someone overseas</span><small>DOES IT?</small></div>
+    </div>
+  </section>
+
+  <section id="s2" class="clip" data-start="6.12" data-duration="1.00" data-track-index="1">
+    <div id="xx" class="xx">&#10005;</div>
+    <div id="wd" class="wedont">We don't.</div>
+  </section>
+
+  <section id="s3" class="clip" data-start="7.12" data-duration="11.88" data-track-index="1">
+    <div id="s3t" class="h2 block" style="font-size:76px">A full agency. <span class="grad">All in house.</span></div>
+    <div class="house" id="house">
+      <div class="roof"></div><div class="hl">IN HOUSE</div>
+      <div class="body"><div class="craft" id="f0">Strategy</div><div class="craft" id="f1">Copy</div><div class="craft" id="f2">Design</div><div class="craft" id="f3">Video</div><div class="craft" id="f4">Websites</div><div class="craft" id="f5">AI agents</div></div>
+    </div>
+    <div class="chk"><span class="pill" id="p0">Built by us</span><span class="pill" id="p1">Our own tools</span><span class="pill" id="p2">Checked by Siamak</span></div>
+  </section>
+
+  <section id="s4" class="clip" data-start="19.00" data-duration="5.98" data-track-index="1">
+    <div class="nos"><div class="no" id="n0"><b>&#10005;</b>No middlemen</div><div class="no" id="n1"><b>&#10005;</b>No hand-offs</div><div class="no" id="n2"><b>&#10005;</b>No lost messages</div></div>
+    <div class="direct" id="direct">
+      <div class="who" id="wy">You</div>
+      <div class="wire" id="wire"></div>
+      <div class="who" id="ws"><img src="assets/silhouette.svg" alt="" />The team doing the work</div>
+    </div>
+  </section>
+
+  <section id="s5" class="clip" data-start="24.98" data-duration="2.04" data-track-index="1">
+    <div class="rec" id="rec"><i id="recd"></i>MADE IN HOUSE</div>
+    <div id="made" class="made">Even this video was <span class="grad">made in house.</span></div>
+  </section>
+
+  <section id="s6" class="clip" data-start="27.02" data-duration="6.38" data-track-index="1">
+    <img id="logo" src="assets/logo.png" alt="Siamak Kalhor Consulting" />
+    <div id="s6a" class="endl block">Your agency. <span class="grad">In house.</span></div>
+    <div id="s6b" class="cta">Talk to Siamak</div>
+    <div id="s6c" class="url block">siamakconsulting.com/agency</div>
+  </section>
+
+  <div id="ccw"></div>
+  <audio id="vo" src="assets/vo.mp3" data-start="0" data-duration="31.39" data-track-index="2" data-volume="1"></audio>
+  <div id="hdl" class="handle">@siamakkkalhor · @sk_consulting</div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const C = [[0.2, 1.68, "Most agencies sell you the work,"], [1.92, 3.16, "then hand it to someone else."], [3.36, 6.1, "Freelancers. Subcontractors. Someone overseas."], [6.2, 6.8, "We don't."], [7.18, 9.9, "Siamak Kalhor Consulting is now a full agency,"], [10.02, 11.4, "and every job is done in house."], [11.64, 15.34, "Strategy. Copy. Design. Video. Websites. AI agents."], [15.86, 18.58, "Built by us, on our own tools, and checked by me."], [19.3, 22.02, "No middlemen. No hand-offs. No lost messages."], [22.66, 24.76, "You talk to the people who actually do the work."], [25.28, 26.9, "Even this video was made in house."], [27.32, 28.78, "Your agency, in house."], [29.28, 31.08, "Start at siamakconsulting.com"]];
+const S = [0, 6.12, 7.12, 19.0, 24.98, 27.02, 33.4];
+const LT = [0.2, 0.48, 3.36, 4.22, 5.18], FT = [11.64, 12.22, 12.8, 13.36, 13.82, 14.58], PT = [15.86, 16.8, 17.94], NT = [19.3, 20.14, 21.1];
+const at = (i) => C[i][0];
+const out = (id, k) => tl.to(id, {opacity:0, duration:.3}, S[k] - .32);
+// 1. the hand-off chain
+LT.forEach((t,i)=>{ if(i) tl.from("#l"+i,{scaleY:0,transformOrigin:"top",duration:.2},t-.15);
+  tl.from("#c"+i,{y:-30,opacity:0,duration:.35,ease:E},t); });
+tl.to(["#c2","#c3","#c4"],{x:(i)=>[-18,22,-14][i],rotation:(i)=>[-3,4,-5][i],duration:.4,ease:"sine.inOut"},5.55);
+out("#s1",1);
+// 2. we don't
+tl.from("#xx",{scale:2.4,opacity:0,rotation:-20,duration:.35,ease:"power4.out"},S[1]+.05)
+  .from("#wd",{scale:.7,opacity:0,duration:.35,ease:"back.out(2)"},at(3));
+out("#s2",2);
+// 3. in house
+tl.from("#s3t",{y:40,opacity:0,duration:.5,ease:E},at(4))
+  .from("#house",{y:80,opacity:0,duration:.6,ease:E},at(5)-.2);
+FT.forEach((t,i)=>tl.from("#f"+i,{scale:.5,opacity:0,duration:.3,ease:"back.out(2)"},t-.05));
+PT.forEach((t,i)=>tl.from("#p"+i,{y:24,opacity:0,duration:.35,ease:E},t));
+out("#s3",3);
+// 4. no middlemen, direct line
+NT.forEach((t,i)=>tl.from("#n"+i,{x:-100,opacity:0,duration:.35,ease:E},t-.05));
+tl.to(".nos",{opacity:.35,duration:.4},at(9)-.1)
+  .from("#wy",{x:-60,opacity:0,duration:.4,ease:E},at(9))
+  .from("#wire",{scaleX:0,transformOrigin:"left",duration:.5,ease:E},at(9)+.4)
+  .from("#ws",{x:60,opacity:0,duration:.4,ease:E},at(9)+.8);
+out("#s4",4);
+// 5. made in house
+tl.from("#rec",{opacity:0,duration:.3},S[4]+.05)
+  .to("#recd",{opacity:.2,duration:.35,repeat:5,yoyo:true},S[4]+.2)
+  .from("#made",{y:40,opacity:0,duration:.5,ease:E},at(10));
+out("#s5",5);
+// 6. end
+tl.from("#logo",{scale:.8,opacity:0,duration:.6,ease:"back.out(1.4)"},S[5]+.05)
+  .from("#s6a",{y:40,opacity:0,duration:.5,ease:E},at(11))
+  .from("#s6b",{scale:.85,opacity:0,duration:.5,ease:"back.out(1.8)"},at(12))
+  .from("#s6c",{opacity:0,duration:.5},at(12)+.4)
+  .to("#s6b",{scale:1.06,duration:.45,ease:"sine.inOut",yoyo:true,repeat:3},at(12)+1);
+tl.to("#glow",{x:-60,y:-120,duration:33.4,ease:"none"},0);
+const W=document.getElementById("ccw");
+C.forEach((c,i)=>{const d=document.createElement("div");d.className="cc";d.textContent=c[2];W.appendChild(d);
+  tl.set(d,{opacity:1},c[0]).set(d,{opacity:0},Math.min(c[1]+.3,(C[i+1]||[33.4])[0]));});
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

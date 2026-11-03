@@ -1,0 +1,117 @@
+{
+ "name": "livefire",
+ "steps": [
+  {
+   "tool": "download",
+   "out": "img/live_fire_logo.png",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/live_fire_logo.png"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/white_flame.png",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/white_flame.png"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Live-Fire-Pizza-Oxbow-Market9.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Live-Fire-Pizza-Oxbow-Market9.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/LFP_meatball.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/LFP_meatball.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Live-Fire-Pizza-Oxbow-Market27-2.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Live-Fire-Pizza-Oxbow-Market27-2.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/LFP_5.1.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/LFP_5.1.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Burrata.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Burrata.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Bianca_Pizza.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Bianca_Pizza.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Appetizers.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Appetizers.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/Beer_pour.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/Beer_pour.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/BledenWine.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/BledenWine.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/i-rDRtdkX-X3.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/i-rDRtdkX-X3.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/i-MsTsxZ7-X3.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/i-MsTsxZ7-X3.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/i-CnHhXdp-X3.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/i-CnHhXdp-X3.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/i-9fxLXzH-X3.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/i-9fxLXzH-X3.jpg"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "img/cropped-LiveFire_flame-01.jpg",
+   "inputs": {
+    "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/cropped-LiveFire_flame-01.jpg"
+   }
+  }
+ ]
+}

@@ -1,14 +1,18 @@
 [
  {
   "out": "ride_seedance.mp4",
-  "status": "ok"
+  "status": "kept"
  },
  {
   "out": "glass.mp3",
-  "status": "ok"
+  "status": "kept"
  },
  {
   "out": "music.mp3",
+  "status": "kept"
+ },
+ {
+  "out": "cut.webm",
   "status": "ok"
  }
 ]

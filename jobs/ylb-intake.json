@@ -1,0 +1,6 @@
+{"name": "ylb-intake",
+ "steps": [
+  {"tool": "elevenlabs_tts", "out": "vo/narration.mp3",
+   "inputs": {"text": "Attorneys. Your next client is on your website right now. And a message... isn't an intake. Meet Your Legal Brain. An A.I. intake team, trained across every major area of law. Personal injury. Family. Immigration. Criminal defense. Employment. It knows exactly what to ask, and never gives legal advice. In English, Spanish, Farsi, or Armenian. It flags what's urgent: court dates, served papers, deadlines. Then the full intake lands on your desk in about a minute. Summary, conflict check, transcript. Ten minutes to set up. One line of code. Every caller heard. Every matter on your desk. Your Legal Brain dot com.",
+    "voice_id": "W2cdBod56VIbm57Ma8I9", "model_id": "eleven_multilingual_v2"}}
+ ]}

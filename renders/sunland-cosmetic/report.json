@@ -1,0 +1,117 @@
+[
+ {
+  "out": "vo/narration.mp3",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "elevenlabs",
+   "model": "eleven_multilingual_v2",
+   "voice_id": "hGVeHdJEcfHv6D6RUSiY",
+   "text_length": 545,
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/vo/narration.mp3",
+   "format": "mp3_44100_128",
+   "request_id": "n29bJu3cXCxflAI8IclW",
+   "cost_status": "estimated"
+  }
+ },
+ {
+  "out": "footage/01_smile.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 76888,
+   "user": "FnBTV",
+   "tags": "man, smiling, farmer, happy, young, culture, senior, woman, girl, happiness, lifestyle, people, portrait",
+   "duration_seconds": 13,
+   "width": 1920,
+   "height": 1080,
+   "query": "woman smiling portrait",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/footage/01_smile.mp4",
+   "total_results": 1656,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-76888/"
+  }
+ },
+ {
+  "out": "footage/02_dentist.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 49463,
+   "user": "KloTube",
+   "tags": "toothbrush, toothpaste, dentist, dentistry, health, hygiene, bathroom, dental care, tube, cleaning",
+   "duration_seconds": 17,
+   "width": 1920,
+   "height": 1080,
+   "query": "dentist",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/footage/02_dentist.mp4",
+   "total_results": 19,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-49463/"
+  }
+ },
+ {
+  "out": "footage/03_gold.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 383544,
+   "user": "Mario_Krimer",
+   "tags": "sunset, golden hour, golden light, reflection, sun glint, ocean, sea, water, beach, sand, wet sand, ripples, shoreline, coast, coastline, evening, twilight, horizon, scenic, landscape, nature, marine, outdoors, bokeh, natural",
+   "duration_seconds": 20,
+   "width": 1080,
+   "height": 1920,
+   "query": "golden light bokeh",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/footage/03_gold.mp4",
+   "total_results": 3796,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-383544/"
+  }
+ },
+ {
+  "out": "footage/04_silk.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 283533,
+   "user": "BlenderTimer",
+   "tags": "wave, breaking, sea, ocean, water, coast, slow motion, slowmo",
+   "duration_seconds": 40,
+   "width": 1920,
+   "height": 1080,
+   "query": "silk fabric slow motion",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/footage/04_silk.mp4",
+   "total_results": 1882,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-283533/"
+  }
+ },
+ {
+  "out": "footage/05_laugh.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 45283,
+   "user": "Engin_Akyurt",
+   "tags": "portrait, woman, smile, girl, beautiful, pose, model, expression, mimic, beauty, white, background, insulating, face, young, make-up, eyes, laugh, beautiful wallpaper, happy, happiness, teeth, mouth, cosmetics",
+   "duration_seconds": 11,
+   "width": 3840,
+   "height": 2160,
+   "query": "happy woman laughing",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/sunland-cosmetic/footage/05_laugh.mp4",
+   "total_results": 1906,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-45283/"
+  }
+ }
+]

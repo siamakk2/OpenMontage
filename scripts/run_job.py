@@ -37,7 +37,7 @@ def main(job_path):
         if step["tool"] == "download":
             import requests
             out.parent.mkdir(parents=True, exist_ok=True)
-            r = requests.get(step["inputs"]["url"], timeout=300)
+            r = requests.get(step["inputs"]["url"], timeout=300, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36", "Referer": "https://livefireoxbow.com/", "Accept": "image/avif,image/webp,image/*,*/*;q=0.8"})
             ok = r.ok and len(r.content) > 0
             if ok:
                 out.write_bytes(r.content)

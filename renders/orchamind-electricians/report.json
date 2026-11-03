@@ -1,0 +1,117 @@
+[
+ {
+  "out": "vo/narration.mp3",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "elevenlabs",
+   "model": "eleven_multilingual_v2",
+   "voice_id": "W2cdBod56VIbm57Ma8I9",
+   "text_length": 686,
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/vo/narration.mp3",
+   "format": "mp3_44100_128",
+   "request_id": "8UR6yIBBUz3dNYU4oJOm",
+   "cost_status": "estimated"
+  }
+ },
+ {
+  "out": "footage/01_panel.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 72837,
+   "user": "Stdudioray",
+   "tags": "solar panels, energy, renewable, electric current, solar, panel, ecological, sustainability",
+   "duration_seconds": 41,
+   "width": 1920,
+   "height": 1080,
+   "query": "electrical panel",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/footage/01_panel.mp4",
+   "total_results": 538,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-72837/"
+  }
+ },
+ {
+  "out": "footage/02_wires.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 85824,
+   "user": "YakupIpek",
+   "tags": "transmission tower, electricity pylon, sky, clouds, wire, cable, technology, nature",
+   "duration_seconds": 10,
+   "width": 3240,
+   "height": 2160,
+   "query": "electrician wires cable",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/footage/02_wires.mp4",
+   "total_results": 142,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-85824/"
+  }
+ },
+ {
+  "out": "footage/03_copper.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 122,
+   "user": "Coverr-Free-Footage",
+   "tags": "idea, light bulb, electricity, light, shine, glowing, darkness, electric lights, filament, glow wire, heat wire, bridge wire, thinking",
+   "duration_seconds": 13,
+   "width": 1920,
+   "height": 1080,
+   "query": "copper wire",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/footage/03_copper.mp4",
+   "total_results": 60,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-122/"
+  }
+ },
+ {
+  "out": "footage/04_van.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 45150,
+   "user": "Pentapfel",
+   "tags": "clouds, mountains, panorama, outdoor, sunset, summer, shadow, sky, nature, sun, mood, rock, creux de van, live wallpaper",
+   "duration_seconds": 7,
+   "width": 1906,
+   "height": 1080,
+   "query": "work van driving",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/footage/04_van.mp4",
+   "total_results": 1307,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-45150/"
+  }
+ },
+ {
+  "out": "footage/05_sparks.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 3522,
+   "user": "Luiz-Jorge-Artista",
+   "tags": "weld, hardware, construction, welder, locksmith, spark, fire, flame, to paste, amend, job, worker, electricity, electrode, metal, profession, beam, iron, steel, light",
+   "duration_seconds": 35,
+   "width": 0,
+   "height": 0,
+   "query": "electric sparks",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-electricians/footage/05_sparks.mp4",
+   "total_results": 608,
+   "results_returned": 10,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-3522/"
+  }
+ }
+]

@@ -34,6 +34,17 @@ def main(job_path):
         if out.exists():
             report.append({"out": step["out"], "status": "kept"})
             continue
+        if step["tool"] == "download":
+            import requests
+            out.parent.mkdir(parents=True, exist_ok=True)
+            r = requests.get(step["inputs"]["url"], timeout=300)
+            ok = r.ok and len(r.content) > 0
+            if ok:
+                out.write_bytes(r.content)
+            failed += 0 if ok else 1
+            report.append({"out": step["out"], "status": "ok" if ok else f"failed http {r.status_code}"})
+            print("download", step["out"], r.status_code, len(r.content))
+            continue
         tool = TOOLS[step["tool"]]()
         inputs = dict(step.get("inputs", {}), output_path=str(out))
         res = tool.execute(inputs)

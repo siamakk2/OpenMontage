@@ -1,105 +1,17 @@
 [
  {
-  "out": "vo/narration.mp3",
+  "out": "vo/narration_v2.mp3",
   "status": "ok",
   "error": null,
   "data": {
    "provider": "elevenlabs",
    "model": "eleven_multilingual_v2",
    "voice_id": "W2cdBod56VIbm57Ma8I9",
-   "text_length": 636,
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/vo/narration.mp3",
+   "text_length": 633,
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/vo/narration_v2.mp3",
    "format": "mp3_44100_128",
-   "request_id": "nQWuSAhI0rJGjNWs8G4z",
+   "request_id": "SJZR48ZBtb7Rj3QS2m83",
    "cost_status": "estimated"
-  }
- },
- {
-  "out": "footage/01_leak.mp4",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "pixabay",
-   "video_id": 190323,
-   "user": "MountainDweller",
-   "tags": "water, pipe, flow, vintage",
-   "duration_seconds": 12,
-   "width": 3840,
-   "height": 2160,
-   "query": "water leak pipe",
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/footage/01_leak.mp4",
-   "total_results": 14344,
-   "results_returned": 10,
-   "license": "Pixabay Content License (free, no attribution required)",
-   "page_url": "https://pixabay.com/videos/id-190323/"
-  }
- },
- {
-  "out": "footage/02_plumber.mp4",
-  "status": "failed",
-  "error": "No videos found for query: plumber",
-  "data": {
-   "total_results": 0
-  }
- },
- {
-  "out": "footage/03_drops.mp4",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "pixabay",
-   "video_id": 28236,
-   "user": "lawlaw91",
-   "tags": "rain, raindrop, wet, water, window, drop, weather, droplets, blue, rainy, dark, beautiful wallpaper, raining, background, live wallpaper",
-   "duration_seconds": 15,
-   "width": 1920,
-   "height": 1080,
-   "query": "water drops dark",
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/footage/03_drops.mp4",
-   "total_results": 14977,
-   "results_returned": 10,
-   "license": "Pixabay Content License (free, no attribution required)",
-   "page_url": "https://pixabay.com/videos/id-28236/"
-  }
- },
- {
-  "out": "footage/04_night.mp4",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "pixabay",
-   "video_id": 5278,
-   "user": "waiguobox",
-   "tags": "rainy, rain, night, summer, colorful, reflection, wet, weather, road, puddles, street, couple, live wallpaper",
-   "duration_seconds": 61,
-   "width": 1840,
-   "height": 1034,
-   "query": "night rain street",
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/footage/04_night.mp4",
-   "total_results": 5237,
-   "results_returned": 10,
-   "license": "Pixabay Content License (free, no attribution required)",
-   "page_url": "https://pixabay.com/videos/id-5278/"
-  }
- },
- {
-  "out": "footage/05_faucet.mp4",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "pixabay",
-   "video_id": 27539,
-   "user": "socialsudo",
-   "tags": "running, bridge, mountains, men running, running in morning, running in winters, running on old bridge, drone view running, running aerial view, men running in morning, monsoon running, men running in hills",
-   "duration_seconds": 8,
-   "width": 3840,
-   "height": 2160,
-   "query": "faucet water running",
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/orchamind-plumbers/footage/05_faucet.mp4",
-   "total_results": 14609,
-   "results_returned": 10,
-   "license": "Pixabay Content License (free, no attribution required)",
-   "page_url": "https://pixabay.com/videos/id-27539/"
   }
  }
 ]

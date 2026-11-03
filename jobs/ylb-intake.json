@@ -1,6 +1,21 @@
-{"name": "ylb-intake",
+{
+ "name": "ylb-intake",
  "steps": [
-  {"tool": "elevenlabs_tts", "out": "vo/narration.mp3",
-   "inputs": {"text": "Attorneys. Your next client is on your website right now. And a message... isn't an intake. Meet Your Legal Brain. An A.I. intake team, trained across every major area of law. Personal injury. Family. Immigration. Criminal defense. Employment. It knows exactly what to ask, and never gives legal advice. In English, Spanish, Farsi, or Armenian. It flags what's urgent: court dates, served papers, deadlines. Then the full intake lands on your desk in about a minute. Summary, conflict check, transcript. Ten minutes to set up. One line of code. Every caller heard. Every matter on your desk. Your Legal Brain dot com.",
-    "voice_id": "W2cdBod56VIbm57Ma8I9", "model_id": "eleven_multilingual_v2"}}
- ]}
+  {
+   "tool": "elevenlabs_tts",
+   "out": "vo/narration.mp3",
+   "inputs": {
+    "text": "Attorneys. Your next client is on your website right now. And a message... isn't an intake. Meet Your Legal Brain. An A.I. intake team, trained across every major area of law. Personal injury. Family. Immigration. Criminal defense. Employment. It knows exactly what to ask, and never gives legal advice. In English, Spanish, Farsi, or Armenian. It flags what's urgent: court dates, served papers, deadlines. Then the full intake lands on your desk in about a minute. Summary, conflict check, transcript. Ten minutes to set up. One line of code. Every caller heard. Every matter on your desk. Your Legal Brain dot com.",
+    "voice_id": "W2cdBod56VIbm57Ma8I9",
+    "model_id": "eleven_multilingual_v2"
+   }
+  },
+  {
+   "tool": "download",
+   "out": "music.mp3",
+   "inputs": {
+    "url": "https://dnznrvs05pmza.cloudfront.net/eleven-music-v2-5/65dab246-7c72-47dd-8453-c03e75946264/Confident__modern__premium_tech_ad_instrumental_for_a_legal_AI_product_aimed_at_attorneys__112_BPM__.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2NkZmRiOTA5ODI2N2M2MyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mzg5MjQ5Nn0.AKRmApfi-bwvkqe2dzyC1pqAg-9X5CXE_W5Tzsq3U6E"
+   }
+  }
+ ]
+}

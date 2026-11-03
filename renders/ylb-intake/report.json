@@ -1,17 +1,10 @@
 [
  {
   "out": "vo/narration.mp3",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "elevenlabs",
-   "model": "eleven_multilingual_v2",
-   "voice_id": "W2cdBod56VIbm57Ma8I9",
-   "text_length": 617,
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/ylb-intake/vo/narration.mp3",
-   "format": "mp3_44100_128",
-   "request_id": "YkHalkIdKbmpPeF0KD3e",
-   "cost_status": "estimated"
-  }
+  "status": "kept"
+ },
+ {
+  "out": "music.mp3",
+  "status": "ok"
  }
 ]

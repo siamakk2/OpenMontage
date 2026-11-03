@@ -1,11 +1,14 @@
-{"name": "orchamind-plumbers",
+{
+ "name": "orchamind-plumbers",
  "steps": [
-  {"tool": "elevenlabs_tts", "out": "vo/narration.mp3",
-   "inputs": {"text": "Plumbers. It's two A.M. A pipe just burst... and tomorrow's schedule is gone. Orchamind is built for how plumbing work actually runs. Log the emergency by voice, on the way. The dispatch board shows which job slips, and who to move. Repipe, or water heater quote? Describe the house, the fixtures, the run. The AI writes it, itemized. Good, better, and best, before you leave the driveway. Rough-in inspection coming up? Orchamind warns you before the wall closes. That wasn't leaking before. Timestamped photo logs protect you on every callback. Orchamind. Emergency calls, repipes, and rough-ins, run from the truck. First month free.",
-              "voice_id": "W2cdBod56VIbm57Ma8I9", "model_id": "eleven_multilingual_v2"}},
-  {"tool": "pixabay_video", "out": "footage/01_leak.mp4", "inputs": {"query": "water leak pipe", "video_type": "film", "min_duration": 4, "per_page": 10}},
-  {"tool": "pixabay_video", "out": "footage/02_plumber.mp4", "inputs": {"query": "plumber", "video_type": "film", "min_duration": 4, "per_page": 10}},
-  {"tool": "pixabay_video", "out": "footage/03_drops.mp4", "inputs": {"query": "water drops dark", "video_type": "film", "min_duration": 4, "per_page": 10}},
-  {"tool": "pixabay_video", "out": "footage/04_night.mp4", "inputs": {"query": "night rain street", "video_type": "film", "min_duration": 4, "per_page": 10}},
-  {"tool": "pixabay_video", "out": "footage/05_faucet.mp4", "inputs": {"query": "faucet water running", "video_type": "film", "min_duration": 3, "per_page": 10}}
- ]}
+  {
+   "tool": "elevenlabs_tts",
+   "out": "vo/narration_v2.mp3",
+   "inputs": {
+    "text": "Plumbers. It's two A.M. A pipe just burst... and tomorrow's schedule is gone. Orkamind is built for how plumbing work actually runs. Log the emergency by voice, on the way. The dispatch board shows which job slips, and who to move. Repipe, or water heater quote? Describe the house, the fixtures, the run. The AI writes it, itemized. Good, better, and best, before you leave the driveway. Rough-in inspection coming up? Orkamind warns you before the wall closes. That wasn't leaking before. Timestamped photo logs protect you on every callback. Orkamind. Emergency calls, repipes, and rough-ins, run from the truck. First month free.",
+    "voice_id": "W2cdBod56VIbm57Ma8I9",
+    "model_id": "eleven_multilingual_v2"
+   }
+  }
+ ]
+}

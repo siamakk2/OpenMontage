@@ -28,6 +28,13 @@
    "inputs": {
     "url": "https://dnznrvs05pmza.cloudfront.net/sam3_video_segmentation/bc9ea5c8-87ee-457c-9aea-147f49392de7/d5a8392e-87b5-44ec-b91b-dec4ccda18d7.webm?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWM4MGQzMDA3M2ZiMmE3ZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mzg2NjQ5Nn0.kz6A8dITUDstYxgytx1yUznd5LlD9ozuZr8v0W3r84c"
    }
+  },
+  {
+   "tool": "download",
+   "out": "cut_horse.webm",
+   "inputs": {
+    "url": "https://dnznrvs05pmza.cloudfront.net/sam3_video_segmentation/23b24989-e5dc-4504-bfd2-5d74bafb3c36/eaa8cf83-d9b1-4bb3-ac02-e03490a2bf91.webm?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWUwNzllMjE1MmU3MjU5ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzgxNjczN30.WiuQAc_eawx39A383YaYDMRKxnNE2LBiJQgdscZLG9Y"
+   }
   }
  ]
 }

@@ -1,0 +1,70 @@
+[
+ {
+  "out": "img/live_fire_logo.png",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/white_flame.png",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Live-Fire-Pizza-Oxbow-Market9.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/LFP_meatball.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Live-Fire-Pizza-Oxbow-Market27-2.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/LFP_5.1.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Burrata.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Bianca_Pizza.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Appetizers.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/Beer_pour.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/BledenWine.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/i-rDRtdkX-X3.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/i-MsTsxZ7-X3.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/i-CnHhXdp-X3.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/i-9fxLXzH-X3.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "img/cropped-LiveFire_flame-01.jpg",
+  "status": "failed http 403"
+ },
+ {
+  "out": "music.mp3",
+  "status": "ok"
+ }
+]

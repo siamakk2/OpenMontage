@@ -112,6 +112,13 @@
    "inputs": {
     "url": "https://livefireoxbow.com/wp-content/uploads/2026/08/cropped-LiveFire_flame-01.jpg"
    }
+  },
+  {
+   "tool": "download",
+   "out": "music.mp3",
+   "inputs": {
+    "url": "https://dnznrvs05pmza.cloudfront.net/eleven-music-v2-5/1fe188ab-d078-4f7e-9373-3e6066e6edfe/Upbeat__stylish_Italian_modern_instrumental_for_a_premium_wood_fired_pizza_restaurant_reel_in_Napa_w.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMjA2ZTExNzdjMmRhOTQ3NyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mzg2MDM0M30.GtyMUo7kH8DZvkT2wwQajzusEdbfmP6tlGbhHZr4360"
+   }
   }
  ]
 }

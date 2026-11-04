@@ -1,0 +1,222 @@
+[
+ {
+  "out": "stock/laser-hair-removal-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 211789,
+   "user": "UniverseUnique",
+   "tags": "earth, laser, space, apocalypse, end of the world",
+   "duration_seconds": 10,
+   "width": 1280,
+   "height": 720,
+   "query": "laser hair removal",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/laser-hair-removal-1.mp4",
+   "total_results": 1027,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-211789/"
+  }
+ },
+ {
+  "out": "stock/laser-hair-removal-2.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 5384,
+   "user": "tommyvideo",
+   "tags": "laser, laser lights, blue, ray lights, beautiful wallpaper, net, grid, lines, background",
+   "duration_seconds": 19,
+   "width": 1280,
+   "height": 720,
+   "query": "laser hair removal",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/laser-hair-removal-2.mp4",
+   "total_results": 1027,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-5384/"
+  }
+ },
+ {
+  "out": "stock/laser-hair-removal-3.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 165233,
+   "user": "tommyvideo",
+   "tags": "laser, node, optical device, light, art, design, device, digital, backdrop",
+   "duration_seconds": 10,
+   "width": 2560,
+   "height": 1440,
+   "query": "laser hair removal",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/laser-hair-removal-3.mp4",
+   "total_results": 1027,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-165233/"
+  }
+ },
+ {
+  "out": "stock/laser-epilation-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 211789,
+   "user": "UniverseUnique",
+   "tags": "earth, laser, space, apocalypse, end of the world",
+   "duration_seconds": 10,
+   "width": 1280,
+   "height": 720,
+   "query": "laser epilation",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/laser-epilation-1.mp4",
+   "total_results": 625,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-211789/"
+  }
+ },
+ {
+  "out": "stock/laser-epilation-2.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 5384,
+   "user": "tommyvideo",
+   "tags": "laser, laser lights, blue, ray lights, beautiful wallpaper, net, grid, lines, background",
+   "duration_seconds": 19,
+   "width": 1280,
+   "height": 720,
+   "query": "laser epilation",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/laser-epilation-2.mp4",
+   "total_results": 625,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-5384/"
+  }
+ },
+ {
+  "out": "stock/smooth-legs-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 341463,
+   "user": "InfinityByte",
+   "tags": "blue poison dart frog, poison dart frog, black spotted frog, blue amphibian, tropical frog, frog on moss, wet rock, damp surface, smooth skin, long hind legs, frog jump, frog on leaves, glossy leaves, frog macro, amphibian close-up, tropical jungle, forest moisture, small frog, vivid coloration, rainforest, jump, ai generated",
+   "duration_seconds": 6,
+   "width": 1280,
+   "height": 720,
+   "query": "smooth legs",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/smooth-legs-1.mp4",
+   "total_results": 624,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-341463/"
+  }
+ },
+ {
+  "out": "stock/smooth-legs-2.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 3830,
+   "user": "anncapictures",
+   "tags": "butterfly, insect, nature, blossom, bloom, wildlife, suction nozzles, sensor, orange, brown, legs",
+   "duration_seconds": 37,
+   "width": 1280,
+   "height": 720,
+   "query": "smooth legs",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/smooth-legs-2.mp4",
+   "total_results": 624,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-3830/"
+  }
+ },
+ {
+  "out": "stock/shaving-legs-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 140210,
+   "user": "redzy",
+   "tags": "football, soccer, robot, leg, fire, ball, kick, flame, burn, pitch",
+   "duration_seconds": 30,
+   "width": 2560,
+   "height": 1440,
+   "query": "shaving legs",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/shaving-legs-1.mp4",
+   "total_results": 119,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-140210/"
+  }
+ },
+ {
+  "out": "stock/razor-shaving-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 32057,
+   "user": "Curious_Collectibles",
+   "tags": "shaving, men, hygiene, clean, close, facial hair, routine, bathroom, removal, beard, razor, grooming, man, tufts, rough, cleansing, regular, regime, guy",
+   "duration_seconds": 8,
+   "width": 1280,
+   "height": 720,
+   "query": "razor shaving",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/razor-shaving-1.mp4",
+   "total_results": 11,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-32057/"
+  }
+ },
+ {
+  "out": "stock/beauty-clinic-laser-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 21936,
+   "user": "SAHN_VIT",
+   "tags": "dental equipment, hospital, dental clinic, medicine, clinic",
+   "duration_seconds": 9,
+   "width": 1280,
+   "height": 720,
+   "query": "beauty clinic laser",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/beauty-clinic-laser-1.mp4",
+   "total_results": 9790,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-21936/"
+  }
+ },
+ {
+  "out": "stock/skin-care-woman-1.mp4",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "pixabay",
+   "video_id": 701,
+   "user": "Vimeo-Free-Videos",
+   "tags": "massage, wellness, recreation, spa, massage therapy, therapy, health, treatment, relaxation, body, care, massage woman, woman, relax, body care, luxury, wellbeing, skin, back, pampering, hands, 127789756",
+   "duration_seconds": 15,
+   "width": 1280,
+   "height": 720,
+   "query": "skin care woman",
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/lhr-stock/stock/skin-care-woman-1.mp4",
+   "total_results": 3535,
+   "results_returned": 3,
+   "license": "Pixabay Content License (free, no attribution required)",
+   "page_url": "https://pixabay.com/videos/id-701/"
+  }
+ }
+]

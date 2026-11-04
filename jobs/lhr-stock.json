@@ -1,0 +1,126 @@
+{
+ "name": "lhr-stock",
+ "steps": [
+  {
+   "tool": "pixabay_video",
+   "out": "stock/laser-hair-removal-1.mp4",
+   "inputs": {
+    "query": "laser hair removal",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/laser-hair-removal-2.mp4",
+   "inputs": {
+    "query": "laser hair removal",
+    "per_page": 3,
+    "page": 2,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/laser-hair-removal-3.mp4",
+   "inputs": {
+    "query": "laser hair removal",
+    "per_page": 3,
+    "page": 3,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/laser-epilation-1.mp4",
+   "inputs": {
+    "query": "laser epilation",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/laser-epilation-2.mp4",
+   "inputs": {
+    "query": "laser epilation",
+    "per_page": 3,
+    "page": 2,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/smooth-legs-1.mp4",
+   "inputs": {
+    "query": "smooth legs",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/smooth-legs-2.mp4",
+   "inputs": {
+    "query": "smooth legs",
+    "per_page": 3,
+    "page": 2,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/shaving-legs-1.mp4",
+   "inputs": {
+    "query": "shaving legs",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/razor-shaving-1.mp4",
+   "inputs": {
+    "query": "razor shaving",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/beauty-clinic-laser-1.mp4",
+   "inputs": {
+    "query": "beauty clinic laser",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  },
+  {
+   "tool": "pixabay_video",
+   "out": "stock/skin-care-woman-1.mp4",
+   "inputs": {
+    "query": "skin care woman",
+    "per_page": 3,
+    "page": 1,
+    "preferred_quality": "medium",
+    "max_duration": 40
+   }
+  }
+ ]
+}

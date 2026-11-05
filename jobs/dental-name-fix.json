@@ -1,0 +1,7 @@
+{"name": "dental-name-fix",
+ "steps": [
+  {"tool": "elevenlabs_tts", "out": "v1.mp3", "inputs": {"text": "At See-ah-mak Kalhor Consulting, we start with a diagnosis, not a campaign.", "voice_id": "1iwGLT7EKaJwSAnMVPmz", "model_id": "eleven_multilingual_v2"}},
+  {"tool": "elevenlabs_tts", "out": "v2.mp3", "inputs": {"text": "At Siyamak Kalhor Consulting, we start with a diagnosis, not a campaign.", "voice_id": "1iwGLT7EKaJwSAnMVPmz", "model_id": "eleven_multilingual_v2"}},
+  {"tool": "elevenlabs_tts", "out": "v3.mp3", "inputs": {"text": "At Seeah-mock Kalhor Consulting, we start with a diagnosis, not a campaign.", "voice_id": "1iwGLT7EKaJwSAnMVPmz", "model_id": "eleven_multilingual_v2"}},
+  {"tool": "elevenlabs_tts", "out": "v4.mp3", "inputs": {"text": "At Siamak Kalhor Consulting, we start with a diagnosis, not a campaign.", "voice_id": "1iwGLT7EKaJwSAnMVPmz", "model_id": "eleven_multilingual_v2"}}
+ ]}

@@ -1,0 +1,6 @@
+{"name": "dental-v3",
+ "steps": [
+  {"tool": "elevenlabs_tts", "out": "vo/narration.mp3",
+   "inputs": {"text": "Dentists. Here's an uncomfortable question. When a patient asks ChatGPT for the best implant dentist near them... does it name you? Most practices don't fail on dentistry. They fail on the chain between attention and the chair. An ad earns a click. The click becomes a call. The call goes to voicemail... and a full-mouth case walks across the street. At Siamak Kalhor Consulting, we start with a diagnosis, not a campaign. Our Neural DNA Architect finds exactly where your chain breaks, before you spend another dollar. Then we engineer the fix. We make your practice the answer A.I. recommends. An A.I. agent answers every call, in every language, and books the consultation. And your content sells trust, not discounts. For Sunland Dental Care, we turned four decades of conservative dentistry into a story patients understand, before they ever sit in the chair. Strategy before tactics. Systems that compound. Book your practice diagnostic at siamakconsulting.com.",
+    "voice_id": "1iwGLT7EKaJwSAnMVPmz", "model_id": "eleven_multilingual_v2"}}
+ ]}

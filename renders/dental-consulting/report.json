@@ -1,17 +1,10 @@
 [
  {
   "out": "vo/narration.mp3",
-  "status": "ok",
-  "error": null,
-  "data": {
-   "provider": "elevenlabs",
-   "model": "eleven_multilingual_v2",
-   "voice_id": "1iwGLT7EKaJwSAnMVPmz",
-   "text_length": 975,
-   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/dental-consulting/vo/narration.mp3",
-   "format": "mp3_44100_128",
-   "request_id": "IFLMGVlvyPPNvtxXwX0i",
-   "cost_status": "estimated"
-  }
+  "status": "kept"
+ },
+ {
+  "out": "music.mp3",
+  "status": "ok"
  }
 ]

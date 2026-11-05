@@ -1,0 +1,17 @@
+[
+ {
+  "out": "vo/narration.mp3",
+  "status": "ok",
+  "error": null,
+  "data": {
+   "provider": "elevenlabs",
+   "model": "eleven_multilingual_v2",
+   "voice_id": "1iwGLT7EKaJwSAnMVPmz",
+   "text_length": 968,
+   "output": "/home/runner/work/OpenMontage/OpenMontage/renders/dental-v3/vo/narration.mp3",
+   "format": "mp3_44100_128",
+   "request_id": "aeCHvZLf4ztpY2wjtn9K",
+   "cost_status": "estimated"
+  }
+ }
+]

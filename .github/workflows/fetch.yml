@@ -1,0 +1,25 @@
+name: Fetch files
+on:
+  push:
+    paths: ['fetch/*.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download listed files
+        run: |
+          for f in fetch/*.txt; do
+            while read -r out url; do
+              [ -z "$out" ] && continue
+              mkdir -p "$(dirname "renders/$out")"
+              [ -s "renders/$out" ] && continue
+              curl -sSL --retry 3 -A "Mozilla/5.0" -o "renders/$out" "$url" && echo "ok $out" || echo "FAIL $out"
+            done < "$f"
+          done
+      - name: Commit
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add renders; git commit -m "Fetched files [skip ci]" || true; git push
